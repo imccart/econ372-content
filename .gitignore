@@ -2,3 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
+archive/*
+exams/*
+homework/*
+papers/*
+case-study/*
