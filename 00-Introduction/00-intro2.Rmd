@@ -1,6 +1,6 @@
 ---
 title: "Module 0: Introduction"
-subtitle: "Course Overview"
+subtitle: "Primer on U.S. Health Care"
 author: Ian McCarthy | Emory University
 date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
 header-includes: 
@@ -58,68 +58,77 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
 ```
 
 
-<!-- New Section -->
----
-class: inverse, center, middle
-name: syllabus
-
-# Course overview
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
-
-(Read the full document here)
-
----
-# Goals of this course
-1. Explain structure of U.S. health care system
-
-2. Model adverse selection in health insurance
-
-3. Explain physician agency problem and the role of financial incentives in health care
-
-4. Analyze hospital data in real-life setting
+# Health Care and Economics (in General)
+Lots of interesting economic issues in health care (not all unique to the U.S.):
+1. Extremely heterogeneous products
+2. Asymmetric information between patients and physicians
+3. Unobservable quality (experience good)
+4. Unpredictable need (inability to shop in many cases)
+5. Distortion of incentives due to insurance
+6. Adverse selection (asymmetric information between patients and insurers)
 
 
 ---
-# Structure
-Material typically presented as follows:
-
-1. Traditional lecture and discussion
-  - All readings listed in syllabus
-  - Available on course website or *Canvas* if not publicly available
-2. In-class worksheets
-3. Homework
-4. Exam (mid-term only)
+# How is the U.S. unique
+- These factors exist in other markets and in other countries, but...
+- Health care is unique in the combination of these issues
+- U.S. is unique in the extent of these issues in health care (policy problems)
 
 
 ---
-# Assignments
+# Why?
 
-- Homework (x3)
-
-- Mid-term
-
-- Case Study
-
-- Policy discussion
+Can you identify one or two reasons for our high prices/expenditures? Keep in mind we don't have a particularly strong quality advantage either.
 
 
 ---
-# Grading
+# Why is spending so high?
 
- Component     | Weight
- --------------| ------------
- Homework (x3) | 45% 
- Mid-term      | 20%
- Case Study    | 30%
- Discussion    | 5%
+.center[
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qSjGouBmo0M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+
+---
+# Fragmentation
+A common crticism of U.S. health care is that it is extremely fragmented:
+- different ways to get insurance
+- mix of providers and reliance on referrals
+- separate billing (for the most part)
+
+---
+# Complicated bills
+Our fragmented system has led to a ridiculously complex and convoluted billing process
+
+--
+
+.center[
+  ![](pics/BillExample.jpg)
+]
+
+<div class="smalltext">Brill, Steven. 2013. "Bitter Pill: Why Medical Bills are Killing Us." *Time Magazine*.</div>
+
+---
+# Complicated bills
+- $18 for accu-chek test strip (in 2011)
+- Can get 50 for $11.44 on Amazon<br>
+
+--
+<br>
+
+Note: this $18 is a charge, which is different from price or cost...much more on this later
 
 
 ---
-# Some expectations
-- This is an <b>economics</b> class first
-- Need some calculus to think things through formally
-  - Nothing more than derivatives
-  - For review, see [practice problems](files/practice_problems.pdf) and [solutions](files/practice_poblems_solutions.pdf)
-  - If you can do this review, you're in good shape
+# What did we learn?
+1. We spend *LOTS* on health care, the most in the world by far
+2. Definitely not the highest quality health care system in the world
+3. Many reasons:
+  - Standard health economics issues
+  - Fragmented system
+  - Market-based system but without real competition
+  - Policy failures
+4. What's the solution?<br>
 
+--
+
+Take this class!!

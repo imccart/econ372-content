@@ -57,17 +57,6 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
                ggrepel)
 ```
 
-<!-- New Section -->
----
-class: inverse, center, middle
-name: welcome
-
-# Motivation
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
-
-
----
 # Health and Health Care
 
 <br>
