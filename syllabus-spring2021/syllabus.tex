@@ -1,0 +1,727 @@
+\documentclass[11pt,]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}} 
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines 
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt} 
+\lhead{}
+\chead{}
+\rhead{\footnotesize Econ 372: Economics of Health Care Markets -- 1/25/2020 - 5/3/2020}
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\small \thepage/\pageref*{LastPage}}
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={ ()},
+             pdfkeywords = {},  
+            pdftitle={Econ 372: Economics of Health Care Markets},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{longtable}
+
+
+
+
+\usepackage{setspace}
+
+\title{Econ 372: Economics of Health Care Markets}
+\author{Ian McCarthy}
+\date{1/25/2020 - 5/3/2020}
+
+
+\begin{document}  
+
+		\maketitle
+		
+	
+		\thispagestyle{firststyle}
+
+%	\thispagestyle{empty}
+
+
+	\noindent \begin{tabular*}{\textwidth}{ @{\extracolsep{\fill}} lr @{\extracolsep{\fill}}}
+
+
+E-mail: \texttt{\href{mailto:ian.mccarthy@emory.edu}{\nolinkurl{ian.mccarthy@emory.edu}}} & Web: \href{http://mccarthy-spring21-econ372.netlify.app/}{\tt mccarthy-spring21-econ372.netlify.app/}\\
+Office Hours: Th 2:30-4:30 p.m.  &  Class Hours: TuTh 8:00-9:15 a.m.\\
+Office: \emph{online}  & Class Room: \emph{online}\\
+	&  \\
+	\hline
+	\end{tabular*}
+	
+\vspace{2mm}
+	
+
+
+\hypertarget{course-description}{%
+\section{Course Description}\label{course-description}}
+
+This course examines the industrial organization of health care markets
+in the U.S., including underlying theory, empirical findings, and
+related health care policy. We will study insurance markets,
+informational asymmetries between physicians and patients, and hospital
+pricing.
+
+\textbf{Prerequisites:} Economics 101 (Principles of Microeconomics).
+Some basic knowledge of calculus and derivatives is also required, but
+not necessarily the official Math 111 (Calculus I) course at Emory.
+
+\hypertarget{learning-outcomes}{%
+\section{Learning Outcomes}\label{learning-outcomes}}
+
+The broad goal of the class is to understand the structure of health
+care markets in the U.S. The course is designed around three areas,
+reflecting the different interactions an individual would have when
+navigating the health care system - first choosing an insurance plan,
+then visiting a physician, and ultimately receiving hospital care. Our
+discussion of hospital care is further divided into issues of hospital
+objective functions, measuring hospital quality, and hospital
+competition. For each segment, we will develop the underlying
+theoretical model(s), cover recent empirical studies in the area, and
+discuss relevant health care policy. My specific goals are that, by the
+end of this course, you will be able to:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Explain the structure of the U.S. health care system, its main
+  components, and its history
+\item
+  Model adverse selection in health insurance, examine its effects on
+  health insurance markets, and support your arguments with existing
+  data
+\item
+  Explain the physician agency problem, use a model of physician agency
+  to examine financial incentives in health care, and summarize
+  empirical evidence on the presence of physician agency
+\item
+  Describe hospital pricing, negotiation with insurers, and explain
+  (qualitatively and quantitatively) the differences between charges and
+  prices
+\item
+  Analyze hospital data in a real-life setting and predict effects of
+  real-life policies
+\end{enumerate}
+
+There are more specific learning outcomes for each module described on
+the relevant module's page of our class website, accessible
+\href{https://mccarthy-spring21-econ372.netlify.app}{here}.
+
+\hypertarget{text-software-and-class-materials}{%
+\section{Text, Software, and Class
+Materials}\label{text-software-and-class-materials}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Where to go:} The best place for information on the class is
+  our class website,
+  \href{https://mccarthy-spring21-econ372.netlify.app/}{mccarthy-spring21-econ372.netlify.app}.
+  I use the website as an easier way for you to access course materials,
+  including notes/slides, a detailed schedule, and assignments. I'll
+  also use Canvas to distribute any papers or specific readings that
+  aren't available publicly, as well as post information that I don't
+  want public like virtual meeting passwords and grades.
+\item
+  \textbf{Readings:} There are two recommended textbooks for this class.
+  One is an intermediate microeconomics textbook that will cover much of
+  the basic economic theory, and another is a health economics textbook.
+  We will supplement these textbooks with other readings listed below in
+  the detailed schedule, as well as online.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    R. Pindyck and D. Rubinfeld \emph{Microeconomics} (Upper Saddle
+    River, NJ: Prentice Hall, 2018).
+  \item
+    Frank A Sloan and Chee-Ruey Hsieh \emph{Health Economics}, \emph{MIT
+    Press Books}, vol. 1 (The MIT Press, 2012).
+  \end{itemize}
+\item
+  \textbf{Statistics Software:} Each assignment will generally include
+  both a theoretical and empirical section. Most of the empirical work
+  involves basic summary statistics. This can be done in just about any
+  spreadsheet or statistics package. I'll use \texttt{R} for my work,
+  but you are free to use whatever software you're most comfortable
+  with. I encourage you to use \texttt{R} or \texttt{Python} simply
+  because these are the most common programs used in applied data
+  analysis right now, but you can certainly use Excel or Google Sheets
+  if you'd prefer. This is \textbf{not} a statistics or econometrics
+  class, so I do not expect you to have any statistics programming
+  knowledge.
+\item
+  \textbf{Accessing Data:} For all assignments and in-class activities,
+  I will house all of the links to the data on our class website. For
+  transparency, I will also point you to other GitHub repositories where
+  available. If you're new to Git or GitHub and want to understand some
+  of that better, take a look at
+  \href{https://grantmcdermott.com/}{Grant McDermott's} notes on
+  \href{https://github.com/uo-ec607/lectures}{Data Science for
+  Economists} as well as \href{https://jennybryan.org/}{Jenny Bryan's}
+  online reference book, \href{https://happygitwithr.com/}{Happy Git and
+  GitHub with R}. But again, knowledge of Git or GitHub is not part of
+  this class.
+\item
+  \textbf{Logistics:} For day-to-day communication, grades, and other
+  private information (such as Zoom meeting links), I'll use
+  \emph{Canvas}. I'll post all other materials to our class website.
+\item
+  \textbf{Lectures and Notes:} Any pre-recorded videos will be made
+  available on our class website prior to any given class. I may also
+  annotate those slides during each class, for which I'll use
+  \emph{OneNote}. Everyone has access to this as an Emory student, so I
+  will set up a classroom notebook which will serve as a single resource
+  for all class notes. You can also take your own notes as part of the
+  app, which should help with keeping things organized. This will also
+  be integrated directly into Canvas.
+\item
+  \textbf{Turning things in:} All assignments should be submitted as PDF
+  files on Canvas. Since we'll be using some math in all of our answers,
+  I ask that all assignments be completed through
+  \href{https://www.overleaf.com/}{Overleaf}. As an Emory student,
+  everyone has access to an institutional Overleaf account, which
+  provides you with all the nice features of the product. You can use
+  this to easily write PDF documents in a language known as ``LaTeX''.
+  For a brief introductory video and links to more info, please see the
+  video
+  \href{https://www.overleaf.com/learn/latex/Questions/Getting_started_with_LaTeX_and_Overleaf_(formerly_writeLaTeX)}{here}.
+\end{enumerate}
+
+\hypertarget{course-policies}{%
+\section{Course Policies}\label{course-policies}}
+
+Various policies for this course are described below. Basically, let's
+all work to be good citizens and take seriously our various roles as a
+student, teacher, friend, colleague, human, etc.
+
+\hypertarget{class-virtual-meetings}{%
+\subsection{Class (virtual) meetings}\label{class-virtual-meetings}}
+
+All regular class meetings will take place virtually this semester on
+\emph{Zoom} during our regularly schedule class times (TuTh, 8:00am to
+9:15am). I'll use the same \emph{Zoom} meeting room for all meetings,
+the details of which are available on our \emph{Canvas} site. As you all
+know, it can be difficult to get everyone engaged in a virtual
+environment. To help with this, I expect everyone to keep their cameras
+and microphones on as much as possible.
+
+All class sessions will be recorded for students in the class to refer
+back to the information, and for enrolled students who are unable to
+attend live. Lectures and other classroom presentations through video
+conferencing and other materials posted on Canvas are for the sole
+purpose of educating the students enrolled in the course. The release of
+such information (including but not limited to directly sharing, screen
+capturing, or recording content) is strictly prohibited, unless the
+instructor states otherwise. Doing so without the permission of the
+instructor will be considered an Honor Code violation and may also be a
+violation of other state and federal laws, such as the Copyright Act.
+
+Students who participate with their camera engaged or utilize a profile
+image are agreeing to have their video or image recorded. If you are
+unwilling to consent to have your profile or video image recorded, be
+sure to keep your camera off and do not use a profile image.
+
+Likewise, students who un-mute during class and participate orally are
+agreeing to have their voices recorded. If you are not willing to
+consent to have your voice recorded during class, you will need to keep
+your mute button activated and communicate exclusively using the
+``chat'' feature, which allows students to type questions and comments
+live.
+
+\hypertarget{office-hours}{%
+\subsection{Office hours}\label{office-hours}}
+
+My designated office hours will be on Thursdays from 2:30 to 4:30pm.
+While we call these ``office hours'' they really should be ``student
+hours''. These are set times dedicated to all of you. This means that I
+will be available, waiting for you to visit (virtually) with whatever
+questions you have. This is the easiest way to find me and usually the
+best chance for discussing class material and concerns. I'll hold my
+designated office hours on Zoom, with meeting and password info on
+Canvas.
+
+I'm also available outside of those designated times. I just ask that
+you schedule an appointment in advance.
+\href{https://mccarthy-meetings.youcanbook.me/}{Make an appointment with
+me here}, and then use our office hours Zoom info.
+
+Finally, you can also always reach out to me through email. I almost
+always respond within 24 hours (often much sooner).
+
+\hypertarget{academic-integrity}{%
+\subsection{Academic integrity}\label{academic-integrity}}
+
+The Emory University Honor Code is taken seriously and governs all work
+in this course. Details about the Honor Code are available at
+\href{http://catalog.college.emory.edu/academic/policies-regulations/honor-code.html}{Emory
+Honor Code}. By taking this course, you affirm that it is a violation of
+the code to cheat on exams, to plagiarize, to deviate from the
+instructions about collaboration on work that is submitted for grades,
+to give false information to a faculty member, and to undertake any
+other form of academic misconduct. You agree that the teacher is
+entitled to move you to another seat during examinations, without
+explanation. You also affirm that if you witness others violating the
+code you have a duty to report them to the honor council.
+
+\hypertarget{accessibility-services}{%
+\subsection{Accessibility services}\label{accessibility-services}}
+
+If you anticipate issues related to the format or requirements of this
+course, please meet with me. I would like us to discuss ways to ensure
+your full participation in the course. If you determine that
+accommodations are necessary, you may register with Accessibility
+Services at (404)727-9877 or via e-mail at
+\href{mailto:accessibility@emory.edu}{\nolinkurl{accessibility@emory.edu}}.
+To register with OAS, students must self identify and initiate contact
+with the OAS office.
+
+\hypertarget{class-wide-announcements}{%
+\subsection{Class-wide announcements}\label{class-wide-announcements}}
+
+I will post regular announcements to the class on \emph{Canvas}, so
+please set up your notifications on \emph{Canvas} accordingly. I will
+also use \emph{Canvas} to post all grades and any other information that
+needs to stay in the class (like our \emph{Zoom} meeting link for
+virtual class times and our gather.town password for office hours). All
+other course materials will be available on our class website,
+\href{https://mccarthy-spring21-econ372.netlify.app/}{mccarthy-spring21-econ271.netlify.app}.
+
+\hypertarget{laurens-promise}{%
+\subsection{Lauren's Promise}\label{laurens-promise}}
+
+\textbf{I will listen and believe you if someone is threatening you.}
+
+Lauren McCluskey, a 21-year-old honors student athlete,
+\href{https://www.sltrib.com/opinion/commentary/2019/02/10/commentary-failing-lauren/}{was
+murdered on October 22, 2018 by a man she briefly dated on the
+University of Utah campus}. We must all take action to ensure that this
+never happens again.
+
+If you are in immediate danger, call 911 or Emory police (404-727-6111).
+
+Any form of sexual harassment or violence will not be excused or
+tolerated at Emory. If you are experiencing sexual assault, domestic
+violence, or stalking, please report it to me or directly to
+\href{http://respect.emory.edu/index.html}{Emorys's Office of Respect}
+(470-270-5360).
+
+\hypertarget{assignments-and-grading}{%
+\section{Assignments and Grading}\label{assignments-and-grading}}
+
+Your final grade consists of three homework assignments, a mid-term
+exam, and a class project, along with a participation component. I
+describe each assignment below, with more additional detail provided on
+our \href{https://mccarthy-spring21-econ372.netlify.app/}{class
+website}.
+
+\hypertarget{participation}{%
+\subsection{Participation}\label{participation}}
+
+Each week, I want to hear about what you learned and what questions you
+still have. The goal of this is twofold: 1) I get immediate feedback
+about how the material and examples are landing in class; and 2) you get
+a chance to organize your thoughts and better engage with the course
+content. For these weekly check-ins, you'll need to fill out a short
+response on Canvas. This should be about 150 words, which is pretty
+short.
+
+There are three possible grades for each weekly submission: - \textbf{2
+points:} Thoughtful response and engagement with content. The
+overwhelming majority of submissions will receive this grade. -
+\textbf{1 point:} Limited engagement and careless response. This is
+reserved for times where something is technically submitted but without
+much critical thought. This grade should be rare. - \textbf{0 points:}
+No submission
+
+I'm essentially grading these on a pass/fail basis. You are \textbf{not}
+graded on the quality of your writing, your citations, you specific word
+count, etc. Just put in the effort and you'll get full credit.
+
+\hypertarget{homework-assignments}{%
+\subsection{Homework assignments}\label{homework-assignments}}
+
+There will be 3 homework assignments throughout the semester (one for
+each module). These assignments will consist of two parts: 1) short
+answer questions related to models covered in class or readings; and 2)
+empirical questions related to data I provide or that you are asked to
+collect. Preliminary due dates for these assignments are below, and
+details of the assignments are on our
+\href{https://mccarthy-spring21-econ372.netlify.app/}{class website}.
+
+\begin{itemize}
+\tightlist
+\item
+  Thursday, 2/25
+\item
+  Tuesday, 3/23
+\item
+  Tuesday, 4/27
+\end{itemize}
+
+\hypertarget{exam}{%
+\subsection{Exam}\label{exam}}
+
+There is one mid-term exam in this class and no final. The mid-term is
+scheduled for \textbf{Tuesday, March 30} and will cover all material
+from Modules 1 and 2. Please notify me immediately if you will need
+other accommodations or if you already know of an unavoidable scheduling
+conflict. In general, I expect everyone to take the exam at the
+scheduled time. Make-up exams are a privilege, not a right, and last
+minute accommodations will only be made when absolutely necessary.
+
+\hypertarget{final-project}{%
+\subsection{Final project}\label{final-project}}
+
+Each of you will analyze data and prepare a report on a practical health
+economics problem. This semester, the project concerns hospital pricing
+and mergers. Details of the project are available on the
+\href{https://mccarthy-spring21-econ372.netlify.app/}{class website},
+and your final report is due on the date our final exam (\textbf{TBD}).
+In general, the final project requires that you analyze real-world
+hospital data and research an economic issue related to those data.
+
+The project is an important part of the class and reflects one of the
+core objectives --- to analyze data in a real-life hospital setting and
+apply those findings to a real-life policy situation. The project is
+intended to be a semester-long endeavor and should be the predominant
+focus throughout the second half of the course. This is why we don't
+have a final exam.
+
+\hypertarget{due-dates}{%
+\subsection{Due dates}\label{due-dates}}
+
+This section is just to highlight the most important dates on which an
+assignment is due. These dates are repeated within the description of
+each assignment above. Note that you can always turn assignments in
+prior to the official due date. Late assignments will receive an
+automatic 10\% reduction in the grade for each day the assignment is
+turned in after the due date.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Thursday, 2/25}: Homework 1
+\item
+  \textbf{Tuesday, 3/23}: Homework 2
+\item
+  \textbf{Tuesday, 3/30}: Mid-term exam
+\item
+  \textbf{Tuesday, 4/27}: Homework 3
+\item
+  \textbf{Final exam date (TBD)}: Final project
+\end{itemize}
+
+\hypertarget{grades}{%
+\subsection{Grades}\label{grades}}
+
+Each assignment will contribute to your final grade as described below.
+
+\begin{longtable}[]{@{}rll@{}}
+\toprule
+Points & Assignment & Percent\tabularnewline
+\midrule
+\endhead
+20 & Weekly check-in & 5\%\tabularnewline
+180 & Homework (60 x 3) & 45\%\tabularnewline
+60 & Mid-term exam & 15\%\tabularnewline
+140 & Final project & 35\%\tabularnewline
+\bottomrule
+\end{longtable}
+
+Your final percentage grade comes from your total points as a percent of
+all possible points available in the class (400). That percent then
+translates to a letter grade as follows:
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+Grade & Range & Grade & Range\tabularnewline
+\midrule
+\endhead
+A & 93-100\% & C & 73-76\%\tabularnewline
+A- & 90-92\% & C- & 70-72\%\tabularnewline
+B+ & 87-89\% & D+ & 67-69\%\tabularnewline
+B & 83-86\% & D & 63-66\%\tabularnewline
+B- & 80-82\% & D- & 60-62\%\tabularnewline
+C+ & 77-79\% & F & \textless{} 60\%\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{class-schedule}{%
+\section{Class Schedule}\label{class-schedule}}
+
+Below is a preliminary outline of specific topics and assignments
+throughout the semester. Based on our collective interests, discussions,
+and timing, these topics may change somewhat.
+
+\hypertarget{module-0-kicking-things-off}{%
+\subsection{Module 0: Kicking things
+off!}\label{module-0-kicking-things-off}}
+
+\hypertarget{introduction-to-the-economics-of-health-care}{%
+\subsubsection{1/26, 1/28: Introduction to the economics of health
+care}\label{introduction-to-the-economics-of-health-care}}
+
+\begin{itemize}
+\tightlist
+\item
+  Kenneth J. Arrow ``Uncertainty and the Welfare Economics of Medical
+  Care,'' \emph{The American Economics Review} 53, no. 5 (1963).
+\item
+  M Gaynor, K Ho, and R Town ``The Industrial Organization of Health
+  Care Markets,'' \emph{Journal of Economic Literature} 47, no. 2
+  (2015): 235--284.
+\end{itemize}
+
+\hypertarget{module-1-health-insurance}{%
+\subsection{Module 1: Health
+insurance}\label{module-1-health-insurance}}
+
+\hypertarget{understanding-risk}{%
+\subsubsection{2/2: Understanding risk}\label{understanding-risk}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sections 5.1-5.2 of Pindyck and Rubinfeld \emph{Microeconomics}.
+\end{itemize}
+
+\hypertarget{demand-for-health-insurance}{%
+\subsubsection{2/4, 2/9: Demand for health
+insurance}\label{demand-for-health-insurance}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sections 4.1-4.7 of Sloan and Hsieh \emph{Health Economics}.
+\end{itemize}
+
+\hypertarget{adverse-selection}{%
+\subsubsection{2/11, 2/16: Adverse Selection}\label{adverse-selection}}
+
+\begin{itemize}
+\tightlist
+\item
+  Section 17.1 of Pindyck and Rubinfeld \emph{Microeconomics}.
+\item
+  Sections 4.8-4.10 of Sloan and Hsieh \emph{Health Economics}.
+\item
+  Liran Einav and Amy Finkelstein ``Selection in Insurance Markets:
+  Theory and Empirics in Pictures,'' \emph{The Journal of Economic
+  Perspectives} 25, no. 1 (2011): 115--138.
+\end{itemize}
+
+\hypertarget{health-insurance-and-current-policy}{%
+\subsubsection{2/18, 2/23: Health insurance and current
+policy}\label{health-insurance-and-current-policy}}
+
+\hypertarget{module-2-physician-agency-and-treatment-decisions}{%
+\subsection{Module 2: Physician agency and treatment
+decisions}\label{module-2-physician-agency-and-treatment-decisions}}
+
+\hypertarget{physician-agency}{%
+\subsubsection{2/25, 3/2: Physician agency}\label{physician-agency}}
+
+\begin{itemize}
+\tightlist
+\item
+  Section 17.4 of Pindyck and Rubinfeld \emph{Microeconomics}.
+\item
+  Thomas G McGuire ``Physician Agency,'' \emph{Handbook of Health
+  Economics} 1 (2000): 461--536.
+\item
+  Homework 1 due on \textbf{Thursday, 2/25}
+\end{itemize}
+
+\hypertarget{fee-for-service-payments}{%
+\subsubsection{3/4, 3/9: Fee-for-service
+payments}\label{fee-for-service-payments}}
+
+\begin{itemize}
+\tightlist
+\item
+  McGuire ``Physician Agency.''
+\end{itemize}
+
+\hypertarget{capitated-payments}{%
+\subsubsection{3/11, 3/18: Capitated
+payments}\label{capitated-payments}}
+
+\begin{itemize}
+\tightlist
+\item
+  Section 5.3 of Sloan and Hsieh \emph{Health Economics}.
+\item
+  Jonathan Gruber and Maria Owings ``Physician Financial Incentives and
+  Cesarean Section Delivery,'' \emph{The RAND Journal of Economics} 27,
+  no. 1 (1996): 99--123.
+\item
+  Jeffrey Clemens and Joshua D Gottlieb ``Do Physicians' Financial
+  Incentives Affect Medical Treatment and Patient Health?''
+  \emph{American Economic Review} 104, no. 4 (2014): 1320--1349.
+\item
+  Note that we do not have class on 3/16 as this is a designated rest
+  day.
+\end{itemize}
+
+\hypertarget{current-issues-in-health-care-payments}{%
+\subsubsection{3/23, 3/25: Current issues in health care
+payments}\label{current-issues-in-health-care-payments}}
+
+\begin{itemize}
+\tightlist
+\item
+  Section 17.2 of Sloan and Hsieh \emph{Health Economics}.
+\item
+  Homework 2 due \textbf{Tuesday, 3/23}
+\end{itemize}
+
+\hypertarget{mid-term-exam}{%
+\subsubsection{3/30: Mid-term Exam}\label{mid-term-exam}}
+
+\hypertarget{module-3-hospital-pricing-and-competition}{%
+\subsection{Module 3: Hospital pricing and
+competition}\label{module-3-hospital-pricing-and-competition}}
+
+\hypertarget{pricing-in-two-price-market}{%
+\subsubsection{4/1, 4/6: Pricing in two-price
+market}\label{pricing-in-two-price-market}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.macpac.gov/medicaid-101/}{Medicaid pricing primer}
+\item
+  \href{https://fas.org/sgp/crs/misc/R40425.pdf}{Medicare pricing
+  primer}
+\item
+  Section 5.4 of Sloan and Hsieh \emph{Health Economics}.
+\end{itemize}
+
+\hypertarget{prices-and-bargaining}{%
+\subsubsection{4/8, 4/13: Prices and
+bargaining}\label{prices-and-bargaining}}
+
+\begin{itemize}
+\tightlist
+\item
+  Uwe E Reinhardt ``The Pricing of Us Hospital Services: Chaos Behind a
+  Veil of Secrecy,'' \emph{Health Affairs} 25, no. 1 (2006): 57--69.
+\end{itemize}
+
+\hypertarget{hospital-competition}{%
+\subsubsection{4/15, 4/20, 4/22: Hospital
+competition}\label{hospital-competition}}
+
+\begin{itemize}
+\tightlist
+\item
+  Gaynor, Ho, and Town ``The Industrial Organization of Health Care
+  Markets.''
+\item
+  M Gaynor, F Mostashari, and P Ginsburg \emph{Making Health Care
+  Markets Work: Competition Policy for Health Care}, Policy Report
+  (Brookings Institute, 2017).
+\end{itemize}
+
+\hypertarget{mergers-and-prices}{%
+\subsubsection{4/27, 4/29: Mergers and
+prices}\label{mergers-and-prices}}
+
+\begin{itemize}
+\tightlist
+\item
+  Gaynor, Ho, and Town ``The Industrial Organization of Health Care
+  Markets.''
+\item
+  Gaynor, Mostashari, and Ginsburg \emph{Making Health Care Markets
+  Work}.
+\item
+  Homework 3 due \textbf{Tuesday, 4/27}
+\end{itemize}
+
+
+
+
+\end{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
