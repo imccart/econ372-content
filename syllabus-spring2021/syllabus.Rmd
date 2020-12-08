@@ -9,7 +9,7 @@ geometry: margin=1in
 
 title: "Econ 372: Economics of Health Care Markets"
 author: Ian McCarthy
-date: "1/25/2020 - 5/3/2020"
+date: "1/25/2021 - 5/12/2021"
 bibliography: "BibTeX_Library.bib"
 csl: "chicago-syllabus-no-bib.csl"
 
@@ -135,14 +135,13 @@ Your final grade consists of three homework assignments, a mid-term exam, and a 
 
 ## Participation
 
-Each week, I want to hear about what you learned and what questions you still have. The goal of this is twofold: 1) I get immediate feedback about how the material and examples are landing in class; and 2) you get a chance to organize your thoughts and better engage with the course content. For these weekly check-ins, you’ll need to fill out a short response on Canvas. This should be about 150 words, which is pretty short.
+Each week, there are two formal "participation" elements. First, we will have weekly in-class quizzes. There will be one quiz per week, sometimes on Monday and sometimes on Wednesday. The quizzes will be very short and very easy. The goal of the quiz is really just to see who is attending and who is engaged. Second, by the end of each week, I want to hear about what you learned and what questions you still have. This provides you a chance to organize your thoughts and better engage with the course content, and it provides me immediate feedback about how the material and examples are landing in class. "Participation" in each week will be graded based on how many of the weekly participation elements are submitted, specifically: 
 
-There are three possible grades for each weekly submission:
-- **2 points:** Thoughtful response and engagement with content. The overwhelming majority of submissions will receive this grade.
-- **1 point:** Limited engagement and careless response. This is reserved for times where something is technically submitted but without much critical thought. This grade should be rare.
-- **0 points:** No submission
+- **2 points:** Submission of a weekly check-in and completion of in-class "quiz"
+- **1 point:** Submission of the check-in or completion of the quiz, but not both
+- **0 points:** No submission of a check-in and no completion of the quiz
 
-I'm essentially grading these on a pass/fail basis. You are **not** graded on the quality of your writing, your citations, you specific word count, etc. Just put in the effort and you'll get full credit.
+I'm essentially grading these on a pass/fail basis. For the weekly check-ins, you are **not** graded on the quality of your writing, your citations, you specific word count, etc. Just put in the effort and you'll get full credit.
 
 ## Homework assignments
 
@@ -159,7 +158,7 @@ There is one mid-term exam in this class and no final. The mid-term is scheduled
 
 ## Final project
 
-Each of you will analyze data and prepare a report on a practical health economics problem. This semester, the project concerns hospital pricing and mergers. Details of the project are available on the [class website](https://mccarthy-spring21-econ372.netlify.app/), and your final report is due on the date our final exam (**TBD**). In general, the final project requires that you analyze real-world hospital data and research an economic issue related to those data. 
+Each of you will analyze data and prepare a report on a practical health economics problem. This semester, the project concerns hospital pricing and mergers. Details of the project are available on the [class website](https://mccarthy-spring21-econ372.netlify.app/), and your final report is due on the date our final exam (**Monday, May 12, 2021**). In general, the final project requires that you analyze real-world hospital data and research an economic issue related to those data. 
 
 The project is an important part of the class and reflects one of the core objectives --- to analyze data in a real-life hospital setting and apply those findings to a real-life policy situation. The project is intended to be a semester-long endeavor and should be the predominant focus throughout the second half of the course. This is why we don't have a final exam.
 
@@ -171,7 +170,7 @@ This section is just to highlight the most important dates on which an assignmen
   - **Tuesday, 3/23**: Homework 2
   - **Tuesday, 3/30**: Mid-term exam
   - **Tuesday, 4/27**: Homework 3
-  - **Final exam date (TBD)**: Final project
+  - **Monday, 5/12**: Final project
 
 
 ## Grades
@@ -179,7 +178,7 @@ This section is just to highlight the most important dates on which an assignmen
 ```{r assignments-grades, include=FALSE}
 assignments <- tibble(
   Points = c(20, 60*3, 60, 140),
-  Assignment = c("Weekly check-in", "Homework (60 x 3)", "Mid-term exam", "Final project")
+  Assignment = c("Participation", "Homework (60 x 3)", "Mid-term exam", "Final project")
 )
 
 assignments <- assignments %>%
