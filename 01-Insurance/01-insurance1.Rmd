@@ -11,7 +11,7 @@ header-includes:
   - \usepackage{pgfshade}
   - \usepackage{pdftools}
 output:
-  html_document: default  
+#  html_document: default  
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts, custom.css] 
     lib_dir: libs
@@ -21,8 +21,6 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
-      navigation:
-          touch: false
 ---
 
 <!-- Adjust some CSS code for font size and maintain R code font size -->
@@ -62,15 +60,7 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
                ggrepel, survey, foreign, devtools, pdftools)
 ```
 
----
-class: inverse, center, middle
-name: motivate
-
 # Motivation
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
-
----
 .center[
 <blockquote class="someecards-embed" id="someecards-embed-4188349" data-id="4188349" data-type="card" data-url="https://napi.someecards.com/embed/card/sledding-is-more-thrilling-when-you-dont-have-health-insurance/?type=card"><a href="https://www.someecards.com/winter-cards/sledding-is-more-thrilling-when-you-dont-have-health-insurance/" target="_blank"><img class="img-responsive" src="https://cdn.someecards.com/someecards/filestorage/sledding-is-more-thrilling-when-you-dont-have-health-insurance-zyw.png" alt="Sledding is more thrilling when you don&#039;t have health insurance." /></a></blockquote><script async src="//cdn.someecards.com/assets/embed/embed-v1.07.min.js" charset="utf-8"></script>
 ]
@@ -93,11 +83,11 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 # Managing risk is really important
 
 .pull-left[
-  ![:scale 450px](pics/meps-visits.png)
+  ![](pics/meps-visits.png)
 ]
 
 .pull-right[
-  ![:scale 450px](pics/meps-expenditure.png)
+  ![](pics/meps-expenditure.png)
 ]
 
 <div class="smalltext">Source: <a href="https://meps.ahrq.gov/mepstrends/hc_use/">Medical Expenditure Panel Survey</a></div>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Module 1: Health Insurance</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ian McCarthy | Emory University" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Module 1: Health Insurance
+## Insurance and risk
+### Ian McCarthy | Emory University
+### Econ 372
+
+---
+
+
+&lt;!-- Adjust some CSS code for font size and maintain R code font size --&gt;
+&lt;style type="text/css"&gt;
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+&lt;/style&gt;
+
+
+&lt;!-- Set R options for how code chunks are displayed and load packages --&gt;
+
+
+# Motivation
+.center[
+&lt;blockquote class="someecards-embed" id="someecards-embed-4188349" data-id="4188349" data-type="card" data-url="https://napi.someecards.com/embed/card/sledding-is-more-thrilling-when-you-dont-have-health-insurance/?type=card"&gt;&lt;a href="https://www.someecards.com/winter-cards/sledding-is-more-thrilling-when-you-dont-have-health-insurance/" target="_blank"&gt;&lt;img class="img-responsive" src="https://cdn.someecards.com/someecards/filestorage/sledding-is-more-thrilling-when-you-dont-have-health-insurance-zyw.png" alt="Sledding is more thrilling when you don&amp;#039;t have health insurance." /&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//cdn.someecards.com/assets/embed/embed-v1.07.min.js" charset="utf-8"&gt;&lt;/script&gt;
+]
+
+
+---
+# Humana exits the ACA exchanges
+In 2018, Humana exited the ACA exchanges due to an "unbalanced risk pool based on the results of the 2017 open enrollment period". [CNN Money Article](https://money.cnn.com/2017/02/14/news/economy/humana-obamacare-insurer)&lt;br&gt;
+
+--
+
+- What do you think this means?
+- What is the underlying business reason here?&lt;br&gt;
+
+--
+
+Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](https://www.npr.org/sections/thetwo-way/2017/02/14/515167491/aetna-and-humana-call-off-merger-after-court-decision)
+
+---
+# Managing risk is really important
+
+.pull-left[
+  ![](pics/meps-visits.png)
+]
+
+.pull-right[
+  ![](pics/meps-expenditure.png)
+]
+
+&lt;div class="smalltext"&gt;Source: &lt;a href="https://meps.ahrq.gov/mepstrends/hc_use/"&gt;Medical Expenditure Panel Survey&lt;/a&gt;&lt;/div&gt;
+
+
+
+&lt;!-- New Section --&gt;
+---
+class: inverse, center, middle
+name: risk
+
+# Insurance and Risk
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=1055px&gt;&lt;/html&gt;
+
+---
+# Describing risk
+We need three things to define risk in this class:
+1. Probability
+2. Expected value
+3. Preferences (i.e., a utility function)
+
+---
+# 1. Probability
+Definition: The likelihood that a given outcome will occur.&lt;br&gt;
+
+--
+
+Important to note the timing here...probability applies to an uncertain event that may have several possible outcomes. For example, I may have a heart attack or I may not. [Risk Calculator](http://www.cvriskcalculator.com/).
+
+---
+# 2. Expected value
+Definition: The probability weighted average of the payoffs (or costs) associated with all possible outcomes.&lt;br&gt;
+
+--
+
+For two potential outcomes, `\(x_{1}\)` and `\(x_{2}\)`, with probabilities `\(p_{1}\)` and `\(p_{2}\)`:&lt;br&gt;
+
+`\(E[x] = p_{1}x_{1} + p_{2}x_{2}\)`
+
+---
+# Example
+What is my expected cost?
+- Two possible outcomes: heart attack or no heart attack
+- 10% chance of having a heart attack
+- Cost of &lt;span&gt;&amp;#36;&lt;/span&gt;100,000 if I have a heart attack (but I will survive and recover)&lt;br&gt;
+
+---
+# Answer
+
+I will incur a cost of &lt;span&gt;&amp;#36;&lt;/span&gt;100,000 with 10% probability. So my expected cost is just `\(E[cost]=0.1*100,000 =\)` 10,000.
+
+---
+# 3. Preferences
+Definition: Preferences take the form of a utility function, `\(u(x)\)`, which tells us how much we benefit get from some consumption bundle, `\(x\)`.&lt;br&gt;
+
+--
+
+Expected utility the combines expected value and utility...&lt;br&gt;
+`\(E[u(x)] = p_{1}u(x_{1}) + p_{2}u(x_{2})\)`
+
+---
+# Risk preferences
+With probabilities, expected values, and utilities/preferences, we can now measure preferences toward risk. &lt;br&gt;
+
+--
+
+- &lt;b&gt;Risk averse:&lt;/b&gt; We prefer to avoid the risky situation. You would rather have the same (or slightly less) with certainty than a lottery over two risky outcomes.
+
+- &lt;b&gt;Risk neutral:&lt;/b&gt; Indifferent between the risky situation or that of certainty.
+
+- &lt;b&gt;Risk loving:&lt;/b&gt; Prefer the risky situation. 
+
+---
+# Risk aversion
+Most common assumption is that individuals are risk averse. Mathematically, this follows from diminishing marginal utility.&lt;br&gt;
+
+--
+
+`\(u'(x_{1}) &gt; u'(x_{2})\)` for `\(x_{1} &lt; x_{2}\)`&lt;br&gt;
+What does this mean in words?
+
+---
+# Risk aversion
+&lt;img src="01-insurance1_files/figure-html/tikz-aversion-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+# In-class Problem: Expected values
+An individual starts with a wealth of &lt;span&gt;&amp;#36;&lt;/span&gt;100,000. With probability 0.3, they will get sick and incur a cost of &lt;span&gt;&amp;#36;&lt;/span&gt;40,000.
+
+1. What is this person's expected cost of illness?
+2. Assume this individual has a utility function of the form, `\(u(w) = w^{0.20}\)`. What is this person's expected utility?
+3. Calculate this person's utility if they were to incur the cost of illness with certainty. Is this utility higher or lower than what you found in part (2)?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
