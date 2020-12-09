@@ -1,0 +1,277 @@
+---
+title: "Module 2: Physician Agency and Treatment Decisions"
+subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=0px></html>"
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{amsmath}
+  - \usepackage{pgf}
+  - \usepackage[xcolor=pst]{pstricks}
+  - \usepackage{pgfshade}
+  - \usepackage{pdftools}
+output:
+  html_document: default
+    css: [default, metropolis, metropolis-fonts, custom.css] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+---
+
+<!-- Adjust some CSS code for font size and maintain R code font size -->
+<style type="text/css">
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+</style>
+
+
+<!-- Set R options for how code chunks are displayed and load packages -->
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=3, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if(options$fig.callout) {
+    options$echo = FALSE
+  }
+  options
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
+               scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
+               ggrepel, survey, foreign, devtools, pdftools)
+```
+
+
+# Table of contents
+
+1. [Motivation](#motivate)
+
+2. [Physician Agency](#agency)
+
+3. [Policy Issues](#policy)
+
+---
+.center[
+  ![:scale 700px](https://media.giphy.com/media/3orifb9GcyGZ8ClIuk/giphy.gif)
+]
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: motivate
+
+# Motivation
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+---
+# Variation in care
+
+.pull-left[
+  ![:scale 475px](pics/dartmouth_map.png)
+]
+
+.pull-right[
+  ![:scale 375px](pics/dartmouth_dist.png)
+]
+
+<div class="smalltext">Source: <a href="https://www.dartmouthatlas.org">Dartmouth Atlas of Health Care</a></div>
+
+---
+# Wasteful?
+- Estimates are that more than 30% of health care expenditures are "wasteful": [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)
+
+- Some clear areas of waste:
+  - Payment differentials by location of treatment (policy quirks)
+  - Better imaging with little benefit
+  - Proton treatment (for some conditions)
+  - Heart stents
+  - Arthroscopic knee surgery<br>
+  
+--
+
+Many estimates of "waste" are after-the-fact. It's actually very hard to identify waste before-hand. [Report on End-of-life Spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628)
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: agency
+
+# Physician Agency
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+---
+# Definition
+
+Physicians are better informed about treatment decisions than patients, and so there exists some <b>agency</b> relationship between the two. For many conditions, patients can't treat themselves even if they wanted to.
+
+---
+# Setup
+- Denote quantity of physician services by $x$
+
+- Denote benefit of services to patient by $B(x)$
+
+- Patients pay (and physicians receive) a price of $p$ for each unit of service $x$
+
+- Physicians incur cost $c$ for each unit of care
+
+- Net benefit to patients is $NB(x)=B(x)-px$
+
+- Physicians must choose quantity of care at least better than the patient's outside option, $NB(x)= B(x)-px \geq NB^{0}$.
+
+
+---
+# Solving the model
+With this framework, how much care will be provided? (i.e., what is the optimal value of $x$) <br>
+
+--
+
+Solve the model in two steps:<br>
+
+1. Physician will provide minimum surplus to keep the patient, $NB(x) = B(x)-px = NB^{0}$
+
+2. Substitute into physician profit function, $\pi=(p-c)x = B(x)-NB^{0} - cx$, and solve for $x$<br>
+
+<br>
+Note: this approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, $B(x)-\bar{p}x=NB^{0}$. 
+
+---
+# In-class Problem: Physician agency
+Denote the quantity of care consumed by $x$, and denote by $B(x)$ the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, $px$, so that their net benefit is $NB=B(x)−px$. Further assume that the physician can choose both $x$ and $p$.  
+
+1. Find the patient’s optimal $x$.
+2. Draw the marginal benefit on a graph and note the price and patient's optimal quantity.
+3. Find the physician's optimal $x$ assuming $NB^{0}=0$. 
+4. Add the physician's optimal $x$ to your graph and interpret the difference.
+
+
+---
+# Physician agency in a graph
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-agency}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.70, every node/.style={black,opacity=1, transform shape}]
+\draw [->] (0,0) node [below] {0} -- (0,0) -- (6,0) node [right] {$x$};
+\draw [->] (0,0) node [below] {0} -- (0,0) -- (0,5.5) node [above] {$NB$};
+\draw (0,5)--(6,1.4);
+\node [right] at (6,1.4) {$b(x)$};
+\draw (0,3.5)--(3.4,3.5);
+\draw (0,3)--(3.4,3);
+\draw (3.4,3.5)--(3.4,0);
+\draw[dashed] (2.5,3.5)--(2.5,0);
+\draw[dashed] (1.7,4)--(1.7,3.5);
+\node [above] at (.8, 3.7) {$NB^{0}$};
+\node [left] at (0,3) {$c$};
+\node [left] at (0,3.5) {$p$};
+\node [below] at (3.4,0) {$x^{*}$};
+\node [below] at (2.5,0) {$\bar{x}$};
+\draw [->] (2, 3.7) ..controls (2.4,3.9) and (2.7,3.7) .. (3,3.4);
+\end{tikzpicture}
+```
+
+---
+# Example
+Assume $B(x)=8x^{1/2}$, $NB^{0}=2$, and $c=1$:<br>
+
+1. Find the physician's optimal level of $x$ and $p$.
+2. Find the patient's optimal level of $x$.
+3. Draw this graphically.
+
+---
+# Answer
+First let's re-write the constraint such that $px = 8x^{1/2}$ and $\pi = 8x^{1/2} - 2 - x$. The first order condition for $x$ is then $4x^{-1/2} -1 =0$, which is satisfied at $x^{*}=16$. Substituting this into the constraint, $8x^{1/2} - px=2$ yields $p=\frac{15}{8}$. 
+
+
+But if they could choose on their own, the patient would prefer to maximize their net benefit. This would occur at $4x^{-1/2}=p$, which yields $x=(32/15)^{2} \approx 4.5$ at $p=15/8$.
+
+
+---
+# Example with fixed price
+An increase in the administratively set price leads to a <b>decrease</b> in quantity of services provided. And vice versa, a reduction in price leads to an <b>increase</b> in quantity provided. Why?
+
+--
+$$\begin{align*}
+b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &= 0 \\
+\frac{\mathrm{d}x}{\mathrm{d}p} = \frac{-x}{p-b(x)} &< 0.
+\end{align*}$$
+
+---
+# In-class Problem: Agency and fixed prices
+
+Assume $B(x)=4x^{1/2}$, $NB^{0}=0$, anc $c=1$. Further assume that prices are fixed administratively at, $\bar{p}=2$. Note that, in this case, we work only off of the patient's net benefit constraint.
+
+1. What is the physician's and patient's optimal amount of care provided?
+2. The government is considering increasing the price to $\bar{p}=3$. What are the new optimal levels of care for physicians and patients at this new price?
+3. How would the price change affect the difference between the patient and physician's optimal amounts?
+
+---
+# Agency with capitated payments
+
+- Physician receives fixed ("capitated") amount for each patient, $R$, along with some price per unit of service, $p_{s}$
+
+- Physician therefore paid $R + (p_{s} - c)x$ for each patient
+
+- Number of patients for each physician expressed as a positive function of the net benefit offered, $n(NB)$, where $NB=B(x) - p_{d}x$. Here, we assume that the insurer sets $p_{d}$ and $p_{s}$ separately (the demand and supply price, respectively).
+
+- Physician again aims to maximize profits, $\pi=n(NB)\left[R+(p_{s}-c)x\right]$.
+
+
+---
+# Solution with capitated payments
+Maximizing the profit function yields:<br>
+$n'(NB)(B'(x) - p_{d}) \left[R + (p_{s} - c)x \right] + n(NB)(p_{s}-c) = 0$.<br>
+
+Rearranging terms and multiplying both sides by $\frac{1}{NB}$, we get:<br>
+$\frac{B'(x) - p_{d}}{NB} \frac{R + (p_{s} - c)x}{p_{s}-c} = - \frac{1}{\varepsilon_{n,NB}}$
+
+--
+
+1. What happens for $R=0$?
+2. What about $R>0$, assuming $p_{s}<c$?
+
+
+---
+# Takeaways
+Excessive treatment may arise because physicians can choose a level of care, and this choice may derive from incentives that are not perfectly aligned with those of the patients. From this section, you should be able to:<br>
+
+1. Set up and solve the physician's optimization problem and compare the solution to that of the patient's optimum.
+2. Show mathematically how the design of an insurance contract (namely, capitated payments versus fee-for-service payments) may determine the extent to which physicians overprovide care.
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: policy
+
+# Policy Issues
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
+---
+# Current policy
+1. [Value-based Purchasing](https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/Value-Based-Programs/HVBP/Hospital-Value-Based-Purchasing)
+
+2. [Bundled Payments](https://innovation.cms.gov/initiatives/bundled-payments/)
+
+3. [Accountable Care Organizations](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ACO/)
+
+4. Information and Consumer Choice: Examples include [Hospital Compare](https://www.medicare.gov/hospitalcompare/search.html?) and [Penalty Information](https://khn.org/news/hospital-penalties/)
