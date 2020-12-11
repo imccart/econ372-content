@@ -1,0 +1,122 @@
+---
+title: "Module 3: Hospital Pricing and Competition"
+subtitle: "Hospital Competition"
+author: Ian McCarthy, Emory University
+date: Econ 372, Spring 2021
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{amsmath}
+  - \usepackage{pgf}
+  - \usepackage[xcolor=pst]{pstricks}
+  - \usepackage{pgfshade}
+  - \usepackage{pdftools}
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+---
+
+<!-- Adjust some CSS code for font size and maintain R code font size -->
+<style type="text/css">
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+</style>
+
+
+<!-- Set R options for how code chunks are displayed and load packages -->
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=3, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if(options$fig.callout) {
+    options$echo = FALSE
+  }
+  options
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
+               scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
+               ggrepel, survey, foreign, devtools, pdftools)
+```
+
+# Central Empirical Issues
+At least 2 related issues in studying hospital competitiveness:
+1. How do we measure "competitiveness"?
+2. What is the effect of competition?
+
+---
+# Measuring competitiveness
+- Common measure is Herfindahl-Hirschman Index (HHI), $\sum_{i=1}^{N} s_{i}^{2}$.
+  - 2,500 is considered **highly concentrated**
+  - 1,800 is considered **unconcentrated**
+- "Willingness to pay" is more recent measure (theoretically supported)
+- Both require a measure of the geographic market
+
+---
+# Defining the market
+Lots of subjectivity...
+- Radius around a hospital?
+- Concentric circles to define "catchment" areas?
+- Patient/physician referrals?
+- At what product-level do hospitals compete?
+
+---
+# Trends in competitiveness
+Almost any way you define it, hospital markets are more and more concentrated (less competitive) in recent decades.
+- 1990: 65% of MSAs highlgy concentrated, 23% unconcentrated
+- 2006: 77% highly concentrated, 11% unconcentrated
+
+
+---
+# Hospital concentration over time
+
+.pull-left[
+  ![](pics/GHT1.png)
+]
+
+.pull-right[
+  ![](pics/GHT2.png)
+]
+
+<div class="smalltext">Source: <a href="https://www.aeaweb.org/articles?id=10.1257/jel.53.2.235">Gaynor, Ho, and Town (2015). The Industrial Organization of Health Care Markets. Journal of Economic Literature.</a></div>
+
+---
+# Hospital concentration over time
+- More data and [interactive report](https://www.healthcostinstitute.org/research/hmi/hmi-interactive#HMI-Concentration-Index) from the Health Care Cost Institute.
+- [Presentation](https://www.nihcm.org/topics/health-care-delivery/hospital-consolidation-trends-impacts-outlook) from the National Institute for Health Care Management
+
+---
+# Why?
+Historical perception of hospital competition as "wasteful" and assumption that more capacity means more (unnecessary) care:
+- Limit public spending by limiting competition
+- Prevalence of certificate of need (CON) laws
+
+---
+# Effects of reduced competition
+1. Higher prices
+2. Lower quality, [2020 NEJM Paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1901383)
+3. Maybe lower costs (but not passed on to lower prices)<br>
+
+--
+
+Effects for both "in-market" and "out-of-market" mergers
