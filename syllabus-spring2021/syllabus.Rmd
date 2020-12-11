@@ -243,6 +243,8 @@ Below is a preliminary outline (subject to change) of specific topics and assign
 ### 3/4, 3/9: Fee-for-service payments
 
   - @mcguire2000
+  - [Medicaid pricing primer](https://www.macpac.gov/medicaid-101/)
+  - [Medicare pricing primer](https://fas.org/sgp/crs/misc/R40425.pdf)
   
 ### 3/11, 3/18: Capitated payments
   
@@ -262,8 +264,6 @@ Below is a preliminary outline (subject to change) of specific topics and assign
 
 ### 4/1, 4/6: Pricing in two-price market
 
-  - [Medicaid pricing primer](https://www.macpac.gov/medicaid-101/)
-  - [Medicare pricing primer](https://fas.org/sgp/crs/misc/R40425.pdf)
   - Section 5.4 of @sloan2012
 
 ### 4/8, 4/13: Prices and bargaining
