@@ -131,7 +131,7 @@ Your final grade consists of three homework assignments, a mid-term exam, and a 
 
 ## Participation
 
-Each week, there are two formal "participation" elements. First, we will have weekly in-class quizzes. There will be one quiz per week, sometimes on Monday and sometimes on Wednesday. The quizzes will be very short and very easy. The goal of the quiz is really just to see who is attending and who is engaged. Second, by the end of each week, I want to hear about what you learned and what questions you still have. This provides you a chance to organize your thoughts and better engage with the course content, and it provides me immediate feedback about how the material and examples are landing in class. "Participation" in each week will be graded based on how many of the weekly participation elements are submitted, specifically: 
+Each week, there are two formal "participation" elements. First, we will have weekly in-class quizzes. There will be one quiz per week, sometimes on Tuesday and sometimes on Thursday. The quizzes will be very short and very easy. The goal of the quiz is really just to see who is attending and who is engaged. Second, by the end of each week, I want to hear about what you learned and what questions you still have. This provides you a chance to organize your thoughts and better engage with the course content, and it provides me immediate feedback about how the material and examples are landing in class. "Participation" in each week will be graded based on how many of the weekly participation elements are submitted, specifically: 
 
 - **2 points:** Submission of a weekly check-in and completion of in-class "quiz"
 - **1 point:** Submission of the check-in or completion of the quiz, but not both
