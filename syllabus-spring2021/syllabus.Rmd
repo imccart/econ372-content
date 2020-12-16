@@ -14,7 +14,7 @@ bibliography: "BibTeX_Library.bib"
 csl: "chicago-syllabus-no-bib.csl"
 
 email: "ian.mccarthy@emory.edu"
-web: "mccarthy-spring21-econ372.netlify.app/"
+web: "econ372s21.classes.ianmccarthyecon.com"
 officehours: "Th 2:30-4:30 p.m."
 office: "*online*"
 classroom: "*online*"
@@ -60,11 +60,11 @@ The broad goal of the class is to understand the structure of health care market
 
 5. Analyze hospital data in a real-life setting and predict effects of real-life policies
 
-There are more specific learning outcomes for each module described on the relevant module's page of our class website, accessible [here](https://mccarthy-spring21-econ372.netlify.app).
+There are more specific learning outcomes for each module described on the relevant module's page of our class website, accessible [here](https://econ372s21.classes.ianmccarthyecon.com/).
 
 # Text, Software, and Class Materials
 
-1. **Where to go:** The best place for information on the class is our class website,  [mccarthy-spring21-econ372.netlify.app](https://mccarthy-spring21-econ372.netlify.app/). I use the website as an easier way for you to access course materials, including notes/slides, a detailed schedule, and assignments. I'll also use Canvas to distribute any papers or specific readings that aren't available publicly, as well as post information that I don't want public like virtual meeting passwords and grades.
+1. **Where to go:** The best place for information on the class is our class website,  [here](https://econ372s21.classes.ianmccarthyecon.com/). I use the website as an easier way for you to access course materials, including notes/slides, a detailed schedule, and assignments. I'll also use Canvas to distribute any papers or specific readings that aren't available publicly, as well as post information that I don't want public like virtual meeting passwords and grades.
 
 2. **Readings:** There are two recommended textbooks for this class. One is an intermediate microeconomics textbook that will cover much of the basic economic theory, and another is a health economics textbook. We will supplement these textbooks with other readings listed below in the detailed schedule, as well as online. 
 
@@ -116,7 +116,7 @@ If you anticipate issues related to the format or requirements of this course, p
 
 ## Class-wide announcements
 
-I will post regular announcements to the class on *Canvas*, so please set up your notifications on *Canvas* accordingly. I will also use *Canvas* to post all grades and any other information that needs to stay in the class (like our *Zoom* meeting link for virtual class times and our gather.town password for office hours). All other course materials will be available on our class website, [mccarthy-spring21-econ271.netlify.app](https://mccarthy-spring21-econ372.netlify.app/).
+I will post regular announcements to the class on *Canvas*, so please set up your notifications on *Canvas* accordingly. I will also use *Canvas* to post all grades and any other information that needs to stay in the class (like our *Zoom* meeting link for virtual class times and our gather.town password for office hours). All other course materials will be available on our class website, [here](https://econ372s21.classes.ianmccarthyecon.com/).
 
 ## Lauren's Promise
 
@@ -126,7 +126,7 @@ Any form of sexual harassment or violence will not be excused or tolerated at Em
 
 # Assignments and Grading
 
-Your final grade consists of three homework assignments, a mid-term exam, and a class project, along with a participation component. I describe each assignment below, with more additional detail provided on our [class website](https://mccarthy-spring21-econ372.netlify.app/). 
+Your final grade consists of three homework assignments, a mid-term exam, and a class project, along with a participation component. I describe each assignment below, with more additional detail provided on our [class website](https://econ372s21.classes.ianmccarthyecon.com/). 
 
 
 ## Participation
@@ -141,7 +141,7 @@ For the weekly check-ins, you are **not** graded on the quality of your writing,
 
 ## Homework assignments
 
-There will be 3 homework assignments throughout the semester (one for each module). These assignments will consist of two parts: 1) short answer questions related to models covered in class or readings; and 2) empirical questions related to data I provide or that you are asked to collect. Preliminary due dates for these assignments are below, and details of the assignments are on our [class website](https://mccarthy-spring21-econ372.netlify.app/).
+There will be 3 homework assignments throughout the semester (one for each module). These assignments will consist of two parts: 1) short answer questions related to models covered in class or readings; and 2) empirical questions related to data I provide or that you are asked to collect. Preliminary due dates for these assignments are below, and details of the assignments are on our [class website](https://econ372s21.classes.ianmccarthyecon.com/).
 
   - Thursday, 2/25
   - Tuesday, 3/23
@@ -154,7 +154,7 @@ There is one mid-term exam in this class and no final. The mid-term is scheduled
 
 ## Final project
 
-Each of you will analyze data and prepare a report on a practical health economics problem. This semester, the project concerns hospital pricing and mergers. Details of the project are available on the [class website](https://mccarthy-spring21-econ372.netlify.app/), and your final report is due on the date our final exam (**Monday, May 12, 2021**). In general, the final project requires that you analyze real-world hospital data and research an economic issue related to those data. 
+Each of you will analyze data and prepare a report on a practical health economics problem. This semester, the project concerns hospital pricing and mergers. Details of the project are available on the [class website](https://econ372s21.classes.ianmccarthyecon.com/), and your final report is due on the date our final exam (**Monday, May 12, 2021**). In general, the final project requires that you analyze real-world hospital data and research an economic issue related to those data. 
 
 The project is an important part of the class and reflects one of the core objectives --- to analyze data in a real-life hospital setting and apply those findings to a real-life policy situation. The project is intended to be a semester-long endeavor and should be the predominant focus throughout the second half of the course. This is why we don't have a final exam.
 
