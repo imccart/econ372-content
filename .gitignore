@@ -2,8 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+content.Rproj
 archive/*
 exams/*
-homework/*
 papers/*
 case-study/*
+homework/hwk1/hwk1_data*
+homework/data-paths.R
