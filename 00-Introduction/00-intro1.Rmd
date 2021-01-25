@@ -75,6 +75,9 @@ We've made *major* improvements in life expectancy (and many other measures of h
 - Access to better services, including health care
 
 
+???
+- In the next several slides, we'll talk about the link between economics and health
+
 ---
 # Evidence of better health
 
@@ -150,6 +153,9 @@ anim_save("anim1.gif",anim1,
   ![](pics/anim1.gif)
 ]
 
+???
+The "economy" seems to be very closely related to health. This makes sense if we think of ways to improve very low life expectancy (e.g., life expectancy cut due to lack of basic necessities like food, shelter, clean water, basic medicine, etc.). But conditional on a relatively high life expectancy, the link between economic performance and life expectancy isn't so clear. The U.S. is a good example.
+
 
 ---
 # But the US is unique
@@ -174,6 +180,9 @@ anim_save("anim2.gif",anim2,
   ![](pics/anim2.gif)
 ]
 
+???
+- So life expectancy and other health outcomes have improved globally
+- But the U.S. seems to be underperforming at least in some easily measurable quality outcomes...our economy continues to grow even while our life expectancy flattens out (even decreasing in recent years)
 
 
 ---
@@ -220,7 +229,8 @@ oecd.dat %>% filter(year>=1970) %>%
   ) + xlim(1970, 2017)
 ```
 
-
+???
+But we continue to spend more and more on health care!
 
 
 
@@ -267,7 +277,7 @@ anim_save("anim5.gif",anim5,
 
 1. Health and health care are constantly changing
 
-2. <span>&#36;</span>3.5 trillion, 17.9% of GDP, <span>&#36;</span>10,739 per person
+2. Health expenditures in 2019: <span>&#36;</span>3.8 trillion, 17.7% of GDP, <span>&#36;</span>11,582 per person (from [NHE Fact Sheet](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet))
 
 3. U.S. health care is uniquely inefficient in many ways
 
