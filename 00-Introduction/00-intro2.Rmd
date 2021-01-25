@@ -17,6 +17,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
+knit: pagedown::chrome_print      
 ---
 
 <!-- Adjust some CSS code for font size, maintain R code font size -->
@@ -60,6 +61,9 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
 
 # Health Care and Economics (in General)
 Lots of interesting economic issues in health care (not all unique to the U.S.):
+
+--
+
 1. Extremely heterogeneous products
 2. Asymmetric information between patients and physicians
 3. Unobservable quality (experience good)
@@ -67,6 +71,8 @@ Lots of interesting economic issues in health care (not all unique to the U.S.):
 5. Distortion of incentives due to insurance
 6. Adverse selection (asymmetric information between patients and insurers)
 
+???
+Can you list some ways that the U.S. health care system is "unique" as an area of economic study?
 
 ---
 # How is the U.S. unique
@@ -81,6 +87,9 @@ Lots of interesting economic issues in health care (not all unique to the U.S.):
 Can you identify one or two reasons for our high prices/expenditures? Keep in mind we don't have a particularly strong quality advantage either.
 
 
+???
+- Do this as a zoom poll: What do you think is the biggest driver of spending? Too much care? Overpaid physicians? Less healthy population?
+
 ---
 # Why is spending so high?
 
@@ -88,9 +97,13 @@ Can you identify one or two reasons for our high prices/expenditures? Keep in mi
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qSjGouBmo0M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ]
 
+
+???
+We saw some of these same ideas in the commonwealth fund graphs. For example, we saw in those graphs that we don't use more health care than in other countries (at least, when measured by number of physician visits)
+
 ---
 # Fragmentation
-A common crticism of U.S. health care is that it is extremely fragmented:
+A common criticism of U.S. health care is that it is extremely fragmented:
 - different ways to get insurance
 - mix of providers and reliance on referrals
 - separate billing (for the most part)
@@ -106,6 +119,10 @@ Our fragmented system has led to a ridiculously complex and convoluted billing p
 ]
 
 <div class="smalltext">Brill, Steven. 2013. "Bitter Pill: Why Medical Bills are Killing Us." *Time Magazine*.</div>
+
+
+???
+How much is an accu-chek test strip on Amazon? Give everyone time to look it up.
 
 ---
 # Complicated bills

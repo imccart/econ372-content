@@ -285,7 +285,9 @@ anim_save("anim5.gif",anim5,
 
 
 ???
-Major takeaway from these commonwealth fund graphs...we have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are, of course, very closely related to other economic problems and inequality in general.
+-Quick Zoom poll: Do you agree or disagree with this statement? The US spends more than any other developed country on health care for worse outcomes.
+
+-Major takeaway from these commonwealth fund graphs...we have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are, of course, very closely related to other economic problems and inequality in general.
 
 ---
 # Why study U.S. health care
