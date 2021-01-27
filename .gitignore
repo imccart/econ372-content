@@ -8,4 +8,5 @@ exams/*
 papers/*
 case-study/*
 homework/hwk1/hwk1_data*
+homework/hwk2/hwk2_data*
 homework/data-paths.R
