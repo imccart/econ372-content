@@ -21,6 +21,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
+knit: pagedown::chrome_print      
 ---
 
 <!-- Adjust some CSS code for font size and maintain R code font size -->
@@ -60,11 +61,15 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
                ggrepel, survey, foreign, devtools, pdftools)
 ```
 
-# Motivation
-.center[
-<blockquote class="someecards-embed" id="someecards-embed-4188349" data-id="4188349" data-type="card" data-url="https://napi.someecards.com/embed/card/sledding-is-more-thrilling-when-you-dont-have-health-insurance/?type=card"><a href="https://www.someecards.com/winter-cards/sledding-is-more-thrilling-when-you-dont-have-health-insurance/" target="_blank"><img class="img-responsive" src="https://cdn.someecards.com/someecards/filestorage/sledding-is-more-thrilling-when-you-dont-have-health-insurance-zyw.png" alt="Sledding is more thrilling when you don&#039;t have health insurance." /></a></blockquote><script async src="//cdn.someecards.com/assets/embed/embed-v1.07.min.js" charset="utf-8"></script>
-]
+# Warmup
 
+Let's start with our in-class quiz from last week (that I forgot to do)
+
+???
+Administrative stuff: 
+
+1. Weekly check-ins are through Canvas.
+2. Weekly guides are not really weekly. Check the course schedule and use the links that way.
 
 ---
 # Humana exits the ACA exchanges
@@ -79,6 +84,8 @@ In 2018, Humana exited the ACA exchanges due to an "unbalanced risk pool based o
 
 Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](https://www.npr.org/sections/thetwo-way/2017/02/14/515167491/aetna-and-humana-call-off-merger-after-court-decision)
 
+
+
 ---
 # Managing risk is really important
 
@@ -92,6 +99,9 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 
 <div class="smalltext">Source: <a href="https://meps.ahrq.gov/mepstrends/hc_use/">Medical Expenditure Panel Survey</a></div>
 
+
+???
+These graphs show that expenditures are closely linked to health. That means insurers need to be aware of their customers. The way we describe the health of an insurer's customers is by something called a "risk pool". Managing the risk pool is really hard and critical.
 
 
 <!-- New Section -->
@@ -135,6 +145,9 @@ What is my expected cost?
 - 10% chance of having a heart attack
 - Cost of <span>&#36;</span>100,000 if I have a heart attack (but I will survive and recover)<br>
 
+???
+Give time for class to do this and answer. Type your answers in the chat once you have them.
+
 ---
 # Answer
 
@@ -149,6 +162,12 @@ Definition: Preferences take the form of a utility function, $u(x)$, which tells
 Expected utility the combines expected value and utility...<br>
 $E[u(x)] = p_{1}u(x_{1}) + p_{2}u(x_{2})$
 
+
+???
+Before moving on, this is a good time to pause and see how we're doing. These may seem like very simple concepts, but they are important. On our scale Zoom poll, "I understand the concepts of probability, expected value, and utility preferences."
+
+Now let's take a quick break and come back in 5.
+
 ---
 # Risk preferences
 With probabilities, expected values, and utilities/preferences, we can now measure preferences toward risk. <br>
@@ -161,13 +180,23 @@ With probabilities, expected values, and utilities/preferences, we can now measu
 
 - <b>Risk loving:</b> Prefer the risky situation. 
 
+
+???
+Fun example...would you take the following bet: I'll give you 10 dollars with certainty, or we can flip a coin. Heads you get 15, tails you get 6.
+
+Now let's try that again with a few more zeros. I'll give you 10 million, or we can flip a coin. Heads you get 15 million, tails you get 6 million.
+
+The point: preferences toward risk are complicated! Luckily we don't really need to measure risk preferences to get the intuition we want...we just need to assume risk aversion.
+
 ---
 # Risk aversion
 Most common assumption is that individuals are risk averse. Mathematically, this follows from diminishing marginal utility.<br>
 
 --
 
-$u'(x_{1}) > u'(x_{2})$ for $x_{1} < x_{2}$<br>
+$u'(x_{1}) > u'(x_{2})$ for $x_{1} < x_{2}$
+
+
 What does this mean in words?
 
 ---
@@ -200,6 +229,10 @@ What does this mean in words?
 %\draw[my grid] (Up-mid) -- (Up-mid2);
 \end{tikzpicture}
 ```
+
+
+???
+This graph has two different things on it. Let's focus on one at at time. Do this on our class notebook screen.
 
 ---
 # In-class Problem: Expected values
