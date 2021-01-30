@@ -241,3 +241,7 @@ An individual starts with a wealth of <span>&#36;</span>100,000. With probabilit
 1. What is this person's expected cost of illness?
 2. Assume this individual has a utility function of the form, $u(w) = w^{0.20}$. What is this person's expected utility?
 3. Calculate this person's utility if they were to incur the cost of illness with certainty. Is this utility higher or lower than what you found in part (2)?
+
+
+???
+Let's do this together in breakout rooms. I'll split you all up randomly and I'll drop in to help.
