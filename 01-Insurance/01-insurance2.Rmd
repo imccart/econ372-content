@@ -20,6 +20,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
+knit: pagedown::chrome_print
 ---
 
 <!-- Adjust some CSS code for font size and maintain R code font size -->
@@ -59,7 +60,19 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
                ggrepel, survey, foreign, devtools, pdftools)
 ```
 
+# Quick summary
 
+Let's quickly revisit the main things from last class:
+
+1. Motivating story: Humana leaving the exchanges due to poor risk pool.
+2. Preliminary things: Calculate expected values and expected utilities
+
+???
+Revisit the expected utility calculation from the end of last class and do the problem together.
+
+Note the weekly check-ins.
+
+---
 # Why purchase health insurance?
 Say your utility function is $u(w)=\sqrt{w}$ and that you're starting with $w=$ <span>&#36;</span>100. I propose a lottery in which I flip a coin...heads you win <span>&#36;</span>20 and tails you lose <span>&#36;</span>20. <br>
 
@@ -81,6 +94,11 @@ eu <- .5*sqrt(80) + .5*sqrt(120)
 Expected wealth is simply $\frac{1}{2} \times 80 + \frac{1}{2} \times 120 =$ `r format(ew,digits=3)`, which yields a utility of $u(w)=$ `r format(sqrt(ew),digits=3)`. But your expected utility is $\frac{1}{2} \times u(w_{heads}) + \frac{1}{2} \times u(w_{tails}) = \frac{1}{2} \times \sqrt{80} + \frac{1}{2} \times \sqrt{120} =$ `r format(eu, digits=3)`.
 
 
+???
+Put these values on our graph to see where we're headed.
+
+Quick poll: Are we comfortable with the difference between expected utility and the utility at the expected value?
+
 ---
 # Risk premium
 
@@ -91,7 +109,7 @@ The maximum amount of money that a risk-averse person is willing to pay to avoid
 This is part of how we measure willingness-to-pay for health insurance.
 
 ---
-# Risk Premium
+# Risk premium
 ```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-premium}
 \usetikzlibrary{calc}
 \begin{tikzpicture}[my plot/.style={
@@ -121,6 +139,11 @@ This is part of how we measure willingness-to-pay for health insurance.
 \draw[my grid] (Up-mid) -- (Up-mid2);
 \end{tikzpicture}
 ```
+
+???
+This is where we'll end for the first class, 2/4. Now let's go through a quick in-class quiz.
+
+End class with discussion/preview of homework 1 and opportunity to ask questions regarding the final project or other assignments.
 
 ---
 # Example
