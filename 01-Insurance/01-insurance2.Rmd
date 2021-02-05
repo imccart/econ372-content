@@ -157,6 +157,11 @@ Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth
 4. Calculate the risk premium as the difference between (1) and (3).
 5. Calculate maximum willingness to pay by adding the risk premium and the expected cost.
 
+???
+We left class on Thursday with this example, so that's where we'll pick back up today. Split into breakout groups and work on this problem together. Hint: To find $u=E[U(w)]$, take the inverse of the natural log, which is $exp^{u}$ in this case.
+
+Regroup after abount 10 minutes to discuss areas of confusion or disagreement.
+
 ---
 # Answer
 ```{r, include=FALSE}
@@ -180,6 +185,10 @@ Assume that utility takes the log form, $u(x)=ln(x)$. If someone is healthy, the
 3. Repeat part (1) using a probability of illness of 0.5.
 4. Explain how these values differ and why. What might this say about the profitability of insurance in a market with many sick people?
 
+???
+Let's practice this again with a couple of extensions. Split into breakout groups and work on this for another 10-15 minutes.
+
+Regroup as a class and discuss areas of confusion.
 
 ---
 # What affects the risk premium?
