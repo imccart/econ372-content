@@ -20,7 +20,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
-knit: pagedown::chrome_print      
+knit: pagedown::chrome_print
 ---
 
 <!-- Adjust some CSS code for font size and maintain R code font size -->
