@@ -20,6 +20,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
+knit: pagedown::chrome_print       
 ---
 
 <!-- Adjust some CSS code for font size and maintain R code font size -->
@@ -61,10 +62,14 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
 
 # What is physician agency
 
----
+<br>
+
 .center[
   ![](https://media.giphy.com/media/3orifb9GcyGZ8ClIuk/giphy.gif)
 ]
+
+???
+The idea of physician agency is simple - physicians know more than patients, and so some amount of care is malleable.
 
 ---
 # Variation in care
@@ -79,6 +84,11 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
 
 <div class="smalltext">Source: <a href="https://www.dartmouthatlas.org">Dartmouth Atlas of Health Care</a></div>
 
+???
+Such variation in care is a clear reflection of just how malleable health care is. Some areas have substantially more care than others which is not explained by health or patient preferences.
+
+Why does this variation matter? It suggests that there's an opportunity to reduce care without hurting patients.
+
 ---
 # Wasteful?
 - Estimates are that more than 30% of health care expenditures are "wasteful": [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)
@@ -87,7 +97,7 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
   - Payment differentials by location of treatment (policy quirks)
   - Better imaging with little benefit
   - Proton treatment (for some conditions)
-  - Heart stents
+  - Heart stents (for some patients)
   - Arthroscopic knee surgery<br>
   
 --
@@ -135,8 +145,11 @@ Solve the model in two steps:<br>
 
 2. Substitute into physician profit function, $\pi=(p-c)x = B(x)-NB^{0} - cx$, and solve for $x$<br>
 
-<br>
-Note: this approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, $B(x)-\bar{p}x=NB^{0}$. 
+---
+count: false
+
+# Solving the model
+This two step approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, $B(x)-\bar{p}x=NB^{0}$. 
 
 ---
 # In-class Problem: Physician agency
