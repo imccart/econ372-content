@@ -156,7 +156,7 @@ This two step approach applies when prices and quantity of care are variable. If
 Denote the quantity of care consumed by $x$, and denote by $B(x)$ the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, $px$, so that their net benefit is $NB=B(x)−px$. Further assume that the physician can choose both $x$ and $p$.  
 
 1. Find the patient’s optimal $x$.
-2. Draw the marginal benefit on a graph and note the price and patient's optimal quantity.
+2. Draw the marginal benefit function on a graph and note the price and patient's optimal quantity. Assume that $B'(x)>0$ and $B''(x)<0$ (i.e., the marginal benefit function is positive and downward sloping).
 3. Find the physician's optimal $x$ assuming $NB^{0}=0$. 
 4. Add the physician's optimal $x$ to your graph and interpret the difference.
 
