@@ -38,6 +38,55 @@ class: center, middle, inverse, title-slide
 
 # What are fee-for-service payments?
 
+- Fee-for-service (FFS) means providers are paid a set payment for a well-defined service
+- More services `\(=\)` more payments
+- Potentially encourages overuse 
+- [Supplemental Google Slides from 3/2](https://docs.google.com/presentation/d/1mDrHqX3csv8nBaNSmmq5IHjq75E2k50mshLERnrEsfE/edit?usp=sharing)
+
+---
+# How are FFS payments calculated?
+
+- Until 1983, Medicare paid hospitals on a "cost-plus" basis
+- Can you think of some problems with this approach?
+
+---
+count: false
+
+# How are FFS payments calculated?
+
+- In 1983, Medicare switched to a "Prospective Payment System
+- PPS: fixed payment that hospitals know they will receive in advance
+- **Fixed** based on the Diagnosis Related Group (DRG) code and other hospital characteristics
+
+---
+count: false
+
+# How are FFS payments calculated?
+
+Let's work through a simple example:
+
+1. PPS "standardized" amounts (one for labor and one for capital)
+2. Adjust labor amount for wage index and add standardized capital amount
+3. Multiply by DRG weight
+4. Multiply by disproportionate share and teaching hospital adjustments (if relevant)
+5. Account for outliers
+
+
+---
+count: false
+
+# How are FFS payments calculated?
+
+**Step 1**&lt;br&gt;
+`\(\left((\text{Labor} \times \text{Wage Index}) + \text{Capital} \right)*\text{DRG Weight}=\text{Base Payment}\)`
+
+**Step 2**&lt;br&gt;
+`\(\text{Base Payment}\times (1 + \text{DSH Adj} + \text{Teaching Adj}) = \text{Final Payment}\)`
+
+--
+
+Let's look at some of these in real life...
+
 ---
 # In-class Problem: Agency and fixed prices
 
@@ -56,6 +105,19 @@ An increase in the administratively set price leads to a &lt;b&gt;decrease&lt;/b
 b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;= 0 \\
 \frac{\mathrm{d}x}{\mathrm{d}p} = \frac{-x}{p-b(x)} &amp;&lt; 0.
 \end{align*}$$`
+
+---
+# Why does this matter?
+
+Say we want to reduce health care utilization, and we try to do so by cutting payments. Will this work?
+
+---
+# Fixed payments in practice
+
+Real life is a little more complicated!
+
+- Often more than one treatment to consider
+- Often more than one payer (private and public) to consider
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
