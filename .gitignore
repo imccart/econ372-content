@@ -8,5 +8,8 @@ exams/*
 papers/*
 case-study/*
 homework/hwk1/hwk1_data*
+homework/hwk1/hwk1-answers*
+homework/hwk1/NJ_Insurance*
 homework/hwk2/hwk2_data*
+homework/hwk2/hwk2-answers*
 homework/data-paths.R
