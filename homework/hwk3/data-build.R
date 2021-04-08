@@ -17,7 +17,7 @@ source('homework/data-paths.R')
 # Import data -------------------------------------------------------------
 
 hcris.data <- readRDS(paste0(hcris.path,'/HCRIS_Data.rds'))
-hrr.xw <- read_excel(path=paste0(geog.path,'/ZipHSAHrr15.xls'))
+hrr.xw <- read_excel(path=paste0(geog.path,'/ZipHsaHrr15.xls'))
 comm.det <- readRDS(paste0(community.path,'/hospital_markets.rds')) %>%
   mutate(fips=as.numeric(fips))
 zip.county <- read_csv(paste0(geog.path,"/zcta-to-county.csv")) %>% 
@@ -54,9 +54,15 @@ price.data <- hcris.data %>%
   filter(price_denom>100, !is.na(price_denom), 
          price_num>0, !is.na(price_num),
          price<100000, 
-         beds>30)
-
-
+         beds>30) %>%
+  mutate(zip=str_sub(zip,1,5),
+         zip=as.numeric(zip)) %>%
+  select(provider_number, street, city, state, zip, beds, tot_discharges, price, year) %>%
+  left_join(hrr.xw %>% select(zip=zipcode15, hrr=hrrnum),
+            by=c("zip")) %>%
+  left_join(cmty.xw,
+            by=c("zip"))
+  
 
 # Save final dataset ------------------------------------------------------
 
