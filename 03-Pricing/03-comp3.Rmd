@@ -20,6 +20,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "macros.js"
+knit: pagedown::chrome_print   
 ---
 
 <!-- Adjust some CSS code for font size and maintain R code font size -->
@@ -102,8 +103,8 @@ Almost any way you define it, hospital markets are more and more concentrated (l
 
 ---
 # Hospital concentration over time
-- More data and [interactive report](https://www.healthcostinstitute.org/research/hmi/hmi-interactive#HMI-Concentration-Index) from the Health Care Cost Institute.
-- [Presentation](https://www.nihcm.org/topics/health-care-delivery/hospital-consolidation-trends-impacts-outlook) from the National Institute for Health Care Management
+- More data and [interactive report](https://healthcostinstitute.org/hcci-originals/healthy-marketplace-index/hmi) from the Health Care Cost Institute.
+- [Presentation](https://nihcm.org/publications/hospital-consolidation-trends-impacts-outlook) from the National Institute for Health Care Management
 
 ---
 # Why?
