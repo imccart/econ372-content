@@ -63,6 +63,7 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
 # Types of hospitals involved in mergers
 .center[
   ![](pics/nihcm-hospital-types.jpg)
+]
 
 ---
 count: false
