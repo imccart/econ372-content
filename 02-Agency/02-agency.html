@@ -4,9 +4,14 @@
     <title>Module 2: Physician Agency and Treatment Decisions</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ian McCarthy, Emory University" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#E68080"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
@@ -14,7 +19,6 @@
 class: center, middle, inverse, title-slide
 
 # Module 2: Physician Agency and Treatment Decisions
-## Current issues in health care payments
 ### Ian McCarthy, Emory University
 ### Econ 372, Spring 2021
 
@@ -37,6 +41,294 @@ class: center, middle, inverse, title-slide
 
 
 
+
+# What is physician agency
+
+&lt;br&gt;
+
+.center[
+  ![](https://media.giphy.com/media/3orifb9GcyGZ8ClIuk/giphy.gif)
+]
+
+???
+The idea of physician agency is simple - physicians know more than patients, and so some amount of care is malleable.
+
+---
+# Variation in care
+
+.pull-left[
+  ![](pics/dartmouth_map.png)
+]
+
+.pull-right[
+  ![](pics/dartmouth_dist.png)
+]
+
+&lt;div class="smalltext"&gt;Source: &lt;a href="https://www.dartmouthatlas.org"&gt;Dartmouth Atlas of Health Care&lt;/a&gt;&lt;/div&gt;
+
+???
+Such variation in care is a clear reflection of just how malleable health care is. Some areas have substantially more care than others which is not explained by health or patient preferences.
+
+Why does this variation matter? It suggests that there's an opportunity to reduce care without hurting patients.
+
+---
+# Wasteful?
+- Estimates are that more than 30% of health care expenditures are "wasteful": [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)
+
+- Some clear areas of waste:
+  - Payment differentials by location of treatment (policy quirks)
+  - Better imaging with little benefit
+  - Proton treatment (for some conditions)
+  - Heart stents (for some patients)
+  - Arthroscopic knee surgery&lt;br&gt;
+  
+--
+
+Many estimates of "waste" are after-the-fact. It's actually very hard to identify waste before-hand. [Report on End-of-life Spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628)
+
+&lt;!-- New Section --&gt;
+---
+class: inverse, center, middle
+name: agency
+
+# Physician Agency
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=1055px&gt;&lt;/html&gt;
+
+---
+# Definition
+
+Physicians are better informed about treatment decisions than patients, and so there exists some &lt;b&gt;agency&lt;/b&gt; relationship between the two. For many conditions, patients can't treat themselves even if they wanted to.
+
+---
+# Setup
+- Denote quantity of physician services by `\(x\)`
+
+- Denote benefit of services to patient by `\(B(x)\)`
+
+- Patients pay (and physicians receive) a price of `\(p\)` for each unit of service `\(x\)`
+
+- Physicians incur cost `\(c\)` for each unit of care
+
+- Net benefit to patients is `\(NB(x)=B(x)-px\)`
+
+- Physicians must choose quantity of care at least better than the patient's outside option, `\(NB(x)= B(x)-px \geq NB^{0}\)`.
+
+
+---
+# Solving the model
+With this framework, how much care will be provided? (i.e., what is the optimal value of `\(x\)`) &lt;br&gt;
+
+--
+
+Solve the model in two steps:&lt;br&gt;
+
+1. Physician will provide minimum surplus to keep the patient, `\(NB(x) = B(x)-px = NB^{0}\)`
+
+2. Substitute into physician profit function, `\(\pi=(p-c)x = B(x)-NB^{0} - cx\)`, and solve for `\(x\)`&lt;br&gt;
+
+---
+count: false
+
+# Solving the model
+This two step approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, `\(B(x)-\bar{p}x=NB^{0}\)`. 
+
+---
+# In-class Problem: Physician agency
+Denote the quantity of care consumed by `\(x\)`, and denote by `\(B(x)\)` the function that determines the benefit of care to the patient. Assume that the patient must pay the full price of care, `\(px\)`, so that their net benefit is `\(NB=B(x)−px\)`. Further assume that the physician can choose both `\(x\)` and `\(p\)`.  
+
+1. Find the patient’s optimal `\(x\)`.
+2. Draw the marginal benefit function on a graph and note the price and patient's optimal quantity. Assume that `\(B'(x)&gt;0\)` and `\(B''(x)&lt;0\)` (i.e., the marginal benefit function is positive and downward sloping).
+3. Find the physician's optimal `\(x\)` assuming `\(NB^{0}=0\)`. 
+4. Add the physician's optimal `\(x\)` to your graph and interpret the difference.
+
+
+---
+# Physician agency in a graph
+&lt;img src="02-agency_files/figure-html/tikz-agency-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+# Example
+Assume `\(B(x)=8x^{1/2}\)`, `\(NB^{0}=2\)`, and `\(c=1\)`:&lt;br&gt;
+
+1. Find the physician's optimal level of `\(x\)` and `\(p\)`.
+2. Find the patient's optimal level of `\(x\)`.
+3. Draw this graphically.
+
+---
+# Answer
+First let's re-write the constraint such that `\(px = 8x^{1/2}\)` and `\(\pi = 8x^{1/2} - 2 - x\)`. The first order condition for `\(x\)` is then `\(4x^{-1/2} -1 =0\)`, which is satisfied at `\(x^{*}=16\)`. Substituting this into the constraint, `\(8x^{1/2} - px=2\)` yields `\(p=\frac{15}{8}\)`. 
+
+
+But if they could choose on their own, the patient would prefer to maximize their net benefit. This would occur at `\(4x^{-1/2}=p\)`, which yields `\(x=(32/15)^{2} \approx 4.5\)` at `\(p=15/8\)`.
+
+---
+# What are fee-for-service payments?
+
+- Fee-for-service (FFS) means providers are paid a set payment for a well-defined service
+- More services `\(=\)` more payments
+- Potentially encourages overuse 
+- [Supplemental Google Slides from 3/2](https://docs.google.com/presentation/d/1mDrHqX3csv8nBaNSmmq5IHjq75E2k50mshLERnrEsfE/edit?usp=sharing)
+
+---
+# How are FFS payments calculated?
+
+- Until 1983, Medicare paid hospitals on a "cost-plus" basis
+- Can you think of some problems with this approach?
+
+---
+count: false
+
+# How are FFS payments calculated?
+
+- In 1983, Medicare switched to a "Prospective Payment System
+- PPS: fixed payment that hospitals know they will receive in advance
+- **Fixed** based on the Diagnosis Related Group (DRG) code and other hospital characteristics
+
+---
+count: false
+
+# How are FFS payments calculated?
+
+Let's work through a simple example:
+
+1. PPS "standardized" amounts (one for labor and one for capital)
+2. Adjust labor amount for wage index and add standardized capital amount
+3. Multiply by DRG weight
+4. Multiply by disproportionate share and teaching hospital adjustments (if relevant)
+5. Account for outliers
+
+
+---
+count: false
+
+# How are FFS payments calculated?
+
+**Step 1**&lt;br&gt;
+`\(\left((\text{Labor} \times \text{Wage Index}) + \text{Capital} \right)*\text{DRG Weight}=\text{Base Payment}\)`
+
+**Step 2**&lt;br&gt;
+`\(\text{Base Payment}\times (1 + \text{DSH Adj} + \text{Teaching Adj}) = \text{Final Payment}\)`
+
+--
+
+Let's look at some of these in real life...
+
+---
+# In-class Problem: Agency and fixed prices
+
+Assume `\(B(x)=4x^{1/2}\)`, `\(NB^{0}=0\)`, anc `\(c=1\)`. Further assume that prices are fixed administratively at, `\(\bar{p}=2\)`. Note that, in this case, we work only off of the patient's net benefit constraint.
+
+1. What is the physician's and patient's optimal amount of care provided?
+2. The government is considering increasing the price to `\(\bar{p}=3\)`. What are the new optimal levels of care for physicians and patients at this new price?
+3. How would the price change affect the difference between the patient and physician's optimal amounts?
+
+---
+# Comparative statics
+An increase in the administratively set price leads to a &lt;b&gt;decrease&lt;/b&gt; in quantity of services provided. And vice versa, a reduction in price leads to an &lt;b&gt;increase&lt;/b&gt; in quantity provided. Why?
+
+--
+`$$\begin{align*}
+b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &amp;= 0 \\
+\frac{\mathrm{d}x}{\mathrm{d}p} = \frac{-x}{p-b(x)} &amp;&lt; 0.
+\end{align*}$$`
+
+---
+# Why does this matter?
+
+Say we want to reduce health care utilization, and we try to do so by cutting payments. Will this work?
+
+---
+# Fixed payments in practice
+
+Real life is a little more complicated!
+
+- Often more than one treatment to consider
+- Often more than one payer (private and public) to consider
+
+
+---
+# What are "capitated" payments?
+
+- Payments for a person or group
+- Set amount intended to cover all expenses for a given person/group
+- If expenses exceed that amount, the providers lose money
+- If expenses fall below that amount, the providers make a profit
+
+---
+# Examples of capitated payments
+
+- No "fully capitated" payments in the U.S.
+- Closest in the U.S. is an "accountable care organization"
+- More common in UK, Canada, and other public systems
+
+--
+
+- We'll discuss more in the next section of this module
+
+---
+# Incentives
+
+Thinking about FFS versus capitated payments...
+
+- What are the incentives in a FFS model if the goal is to make more money?
+- Are those incentives different in a capitated payment model? How?
+
+---
+# Agency with capitated payments
+
+- Physician receives fixed ("capitated") amount for each patient, `\(R\)`, along with some price per unit of service, `\(p_{s}\)`
+
+- Physician therefore paid `\(R + (p_{s} - c)x\)` for each patient
+
+- Number of patients for each physician expressed as a positive function of the net benefit offered, `\(n(NB)\)`, where `\(NB=B(x) - p_{d}x\)`. Here, we assume that the insurer sets `\(p_{d}\)` and `\(p_{s}\)` separately (the demand and supply price, respectively).
+
+- Physician again aims to maximize profits, `\(\pi=n(NB)\left[R+(p_{s}-c)x\right]\)`.
+
+
+---
+# Solution with capitated payments
+Maximizing the profit function yields:&lt;br&gt;
+`\(n'(NB)(B'(x) - p_{d}) \left[R + (p_{s} - c)x \right] + n(NB)(p_{s}-c) = 0\)`.&lt;br&gt;
+
+Rearranging terms and multiplying both sides by `\(\frac{1}{NB}\)`, we get:&lt;br&gt;
+`\(\frac{B'(x) - p_{d}}{NB} \frac{R + (p_{s} - c)x}{p_{s}-c} = - \frac{1}{\varepsilon_{n,NB}}\)`
+
+--
+
+1. What happens for `\(R=0\)`?
+2. What about `\(R&gt;0\)`, assuming `\(p_{s}&lt;c\)`?
+
+---
+# In-class problem: Agency and Capitated Payments
+
+- Assume that the physician's number of patients in the practice depends on the net benefit offered, `\(NB=B(x) - p_{d}x\)`, where `\(x\)` denotes the amount of care and `\(p_{d}\)` denotes the prices that the patient must pay. For simplicity, we'll assume that the number of patients is the same as the net benefit, `\(n(NB) = NB\)`.
+- Assume that patients are fully insured so that `\(p_{d}=0\)`. 
+- Assume that the benefit function is `\(B(x) = 16x-2x^{2}\)`. 
+- Assume that the physician is paid a fixed amount, `\(R\)`, for each patient, and earns some profit, `\(p_{s}-c\)`, on each unit of care.
+
+---
+count: false
+
+# In-class problem: Agency and Capitated Payments
+
+1. Solve for the patient's optimal amount of care (if they could choose the amount on their own).
+2. Write out the physician's profit function based on the information provided.
+3. Find the physician's optimal `\(x\)` if `\(R=0\)` and `\(p_{s}-c=1\)`.
+4. Find the physician's optimal `\(x\)` if `\(R=1\)` and `\(p_{s}-c=1\)`. How does this differ from part (3)?
+5. Find the physician's optimal `\(x\)` if `\(R=1\)` and `\(p_{s}-c=0\)`.
+
+
+
+---
+# Takeaways
+Excessive treatment may arise because physicians can choose a level of care, and this choice may derive from incentives that are not perfectly aligned with those of the patients. From this section, you should be able to:&lt;br&gt;
+
+1. Set up and solve the physician's optimization problem and compare the solution to that of the patient's optimum.
+2. Show mathematically how the design of an insurance contract (namely, capitated payments versus fee-for-service payments) may determine the extent to which physicians overprovide care.
+
+
+---
 # Major Public Payors
 
 1. Medicare

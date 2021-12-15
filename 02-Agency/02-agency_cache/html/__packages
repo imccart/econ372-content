@@ -1,10 +1,4 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 knitr
 pacman
 tidyverse
@@ -28,7 +22,6 @@ tufte
 plotly
 OECD
 ggrepel
-grid
 Matrix
 survival
 survey
@@ -36,3 +29,4 @@ foreign
 usethis
 devtools
 pdftools
+xaringanExtra
