@@ -1,0 +1,585 @@
+---
+title: "Module 1: Health Insurance"
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{amsmath}
+  - \usepackage{pgf}
+  - \usepackage[xcolor=pst]{pstricks}
+  - \usepackage{pgfshade}
+  - \usepackage{pdftools}
+output:
+#  html_document: default  
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+knit: pagedown::chrome_print      
+---
+
+<!-- Adjust some CSS code for font size and maintain R code font size -->
+<style type="text/css">
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+</style>
+
+
+<!-- Set R options for how code chunks are displayed and load packages -->
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=3, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if(options$fig.callout) {
+    options$echo = FALSE
+  }
+  options
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
+               scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
+               ggrepel, survey, foreign, devtools, pdftools, xaringanExtra)
+```
+
+
+```{r xaringan-scribble, echo=FALSE}
+xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
+```
+
+# Airport Idea:
+
+
+
+
+---
+# Humana exits the ACA exchanges
+In 2018, Humana exited the ACA exchanges due to an "unbalanced risk pool based on the results of the 2017 open enrollment period". [CNN Money Article](https://money.cnn.com/2017/02/14/news/economy/humana-obamacare-insurer)<br>
+
+--
+
+- What do you think this means?
+- What is the underlying business reason here?<br>
+
+--
+
+Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](https://www.npr.org/sections/thetwo-way/2017/02/14/515167491/aetna-and-humana-call-off-merger-after-court-decision)
+
+
+
+---
+# Managing risk is really important
+
+.pull-left[
+  ![](pics/meps-visits.png)
+]
+
+.pull-right[
+  ![](pics/meps-expenditure.png)
+]
+
+<div class="smalltext">Source: <a href="https://meps.ahrq.gov/mepstrends/hc_use/">Medical Expenditure Panel Survey</a></div>
+
+
+???
+These graphs show that expenditures are closely linked to health. That means insurers need to be aware of their customers. The way we describe the health of an insurer's customers is by something called a "risk pool". Managing the risk pool is really hard and critical.
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: risk
+
+# Insurance and Risk
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+---
+# Describing risk
+We need three things to define risk in this class:
+1. Probability
+2. Expected value
+3. Preferences (i.e., a utility function)
+
+---
+# 1. Probability
+Definition: The likelihood that a given outcome will occur.<br>
+
+--
+
+Important to note the timing here...probability applies to an uncertain event that may have several possible outcomes. For example, I may have a heart attack or I may not. [Risk Calculator](http://www.cvriskcalculator.com/).
+
+---
+# 2. Expected value
+Definition: The probability weighted average of the payoffs (or costs) associated with all possible outcomes.<br>
+
+--
+
+For two potential outcomes, $x_{1}$ and $x_{2}$, with probabilities $p_{1}$ and $p_{2}$:<br>
+
+$E[x] = p_{1}x_{1} + p_{2}x_{2}$
+
+---
+# Example
+What is my expected cost?
+- Two possible outcomes: heart attack or no heart attack
+- 10% chance of having a heart attack
+- Cost of <span>&#36;</span>100,000 if I have a heart attack (but I will survive and recover)<br>
+
+???
+Give time for class to do this and answer. Type your answers in the chat once you have them.
+
+---
+# Answer
+
+I will incur a cost of <span>&#36;</span>100,000 with 10% probability. So my expected cost is just $E[cost]=0.1*100,000 =$ `r format(0.1*100000,digits=5,big.mark=",")`.
+
+---
+# 3. Preferences
+Definition: Preferences take the form of a utility function, $u(x)$, which tells us how much we benefit get from some consumption bundle, $x$.<br>
+
+--
+
+Expected utility the combines expected value and utility...<br>
+$E[u(x)] = p_{1}u(x_{1}) + p_{2}u(x_{2})$
+
+
+???
+Before moving on, this is a good time to pause and see how we're doing. These may seem like very simple concepts, but they are important. On our scale Zoom poll, "I understand the concepts of probability, expected value, and utility preferences."
+
+Now let's take a quick break and come back in 5.
+
+---
+# Risk preferences
+With probabilities, expected values, and utilities/preferences, we can now measure preferences toward risk. <br>
+
+--
+
+- <b>Risk averse:</b> We prefer to avoid the risky situation. You would rather have the same (or slightly less) with certainty than a lottery over two risky outcomes.
+
+- <b>Risk neutral:</b> Indifferent between the risky situation or that of certainty.
+
+- <b>Risk loving:</b> Prefer the risky situation. 
+
+
+???
+Fun example...would you take the following bet: I'll give you 10 dollars with certainty, or we can flip a coin. Heads you get 15, tails you get 6.
+
+Now let's try that again with a few more zeros. I'll give you 10 million, or we can flip a coin. Heads you get 15 million, tails you get 6 million.
+
+The point: preferences toward risk are complicated! Luckily we don't really need to measure risk preferences to get the intuition we want...we just need to assume risk aversion.
+
+---
+# Risk aversion
+Most common assumption is that individuals are risk averse. Mathematically, this follows from diminishing marginal utility.<br>
+
+--
+
+$u'(x_{1}) > u'(x_{2})$ for $x_{1} < x_{2}$
+
+
+What does this mean in words?
+
+---
+# Risk aversion
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-aversion}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[my plot/.style={
+                        thick,
+                        smooth,
+                        samples=100,
+                        domain=0.1:5},
+                    scale=0.75,
+                    my grid/.style={dashed,opacity=0.5, every node/.style={black,opacity=1, transform shape}},
+                    my axis/.style={latex-latex}]
+\draw[my plot] (0,0) plot (\x,{ln(\x)});
+\coordinate (start plot) at (0.1,{ln(0.1)}); % domain start
+\coordinate (end plot) at (5,{ln(5)}); % domain end
+%\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) node[left] {$u(\cdot)$} |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot) node[below] {$\cdot$};
+\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot);
+\def\x{0.5}\def\y{4}\def\p{0.55} % define the x, y and p values
+\coordinate (Ux) at (\x,{ln(\x)}); % set the u(x) coordinate
+\coordinate (Uy) at (\y,{ln(\y)}); % set the u(y) coordinate
+\coordinate (Up) at ({\p*\x+(1-\p)*\y},{ln(\p*\x+(1-\p)*\y)}); % set the u(p*x+(1-p)*y) coordinate
+\draw (Ux) -- coordinate[pos=1-\p] (Up-mid) (Uy); % set the coordinate on the linear curve
+\path let \p1=(Up-mid), \n1={pow(e,\y1*0.03514)} in (28.4576*\n1,\y1) coordinate (Up-mid2); 
+\draw[my grid] (Ux) |- node[below]{$x_{1}$} (origin) |- node[left]{$u(x_{1})$} cycle;
+\draw[my grid] (Uy) |- node[below]{$x_{2}$} (origin) |- node[left]{$u(x_{2})$} cycle;
+\draw[my grid] (Up) |- node[below,font=\scriptsize]{$p_{1}x_{1}+p_{2}x_{2}$} (origin) |- node[left,font=\scriptsize]{$u(p_{1}x_{1}+p_{2}x_{2})$} cycle;
+%\draw[my grid] (Up-mid2) |- node[below,font=\scriptsize]{$c(F,u)$} (origin) |- node[left]{$pu(x)+(1-p)u(y)$} cycle;
+%\draw[my grid] (Up-mid) -- (Up-mid2);
+\end{tikzpicture}
+```
+
+
+???
+This graph has two different things on it. Let's focus on one at at time. Do this on our class notebook screen.
+
+---
+# In-class Problem: Expected values
+An individual starts with a wealth of <span>&#36;</span>100,000. With probability 0.3, they will get sick and incur a cost of <span>&#36;</span>40,000.
+
+1. What is this person's expected cost of illness?
+2. Assume this individual has a utility function of the form, $u(w) = w^{0.20}$. What is this person's expected utility?
+3. Calculate this person's utility if they were to incur the cost of illness with certainty. Is this utility higher or lower than what you found in part (2)?
+
+
+???
+Let's do this together in breakout rooms. I'll split you all up randomly and I'll drop in to help.
+
+
+---
+# Why purchase health insurance?
+Say your utility function is $u(w)=\sqrt{w}$ and that you're starting with $w=$ <span>&#36;</span>100. I propose a lottery in which I flip a coin...heads you win <span>&#36;</span>20 and tails you lose <span>&#36;</span>20. <br>
+
+--
+
+1. What is the expected monetary value of this lottery? 
+
+2. What is your utility at this expected value? 
+
+3. What is the expected utility from this lottery?
+
+---
+# Answer
+```{r include=FALSE}
+ew <- .5*80+.5*120
+eu <- .5*sqrt(80) + .5*sqrt(120)
+
+```
+Expected wealth is simply $\frac{1}{2} \times 80 + \frac{1}{2} \times 120 =$ `r format(ew,digits=3)`, which yields a utility of $u(w)=$ `r format(sqrt(ew),digits=3)`. But your expected utility is $\frac{1}{2} \times u(w_{heads}) + \frac{1}{2} \times u(w_{tails}) = \frac{1}{2} \times \sqrt{80} + \frac{1}{2} \times \sqrt{120} =$ `r format(eu, digits=3)`.
+
+
+???
+Put these values on our graph to see where we're headed.
+
+Quick poll: Are we comfortable with the difference between expected utility and the utility at the expected value?
+
+---
+# Risk premium
+
+The maximum amount of money that a risk-averse person is willing to pay to avoid the risky scenario. In other words, the amount of money that makes a person indifferent between the certain and uncertain situations.<br>
+
+--
+
+This is part of how we measure willingness-to-pay for health insurance.
+
+---
+# Risk premium
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-premium}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[my plot/.style={
+                        thick,
+                        smooth,
+                        samples=100,
+                        domain=0.1:5},
+                    scale=0.75,
+                    my grid/.style={dashed,opacity=0.5, every node/.style={black,opacity=1}, transform shape},
+                    my axis/.style={latex-latex}]
+\draw[my plot] (0,0) plot (\x,{ln(\x)});
+\coordinate (start plot) at (0.1,{ln(0.1)}); % domain start
+\coordinate (end plot) at (5,{ln(5)}); % domain end
+\draw[my axis] ([shift={(-0.5cm,0.5cm)}]start plot |- end plot) |- node[coordinate](origin){} ([shift={(0.5cm,-0.5cm)}]start plot -| end plot);
+\def\x{0.5}\def\y{4}\def\p{0.55} % define the x, y and p values
+\coordinate (Ux) at (\x,{ln(\x)}); % set the u(x) coordinate
+\coordinate (Uy) at (\y,{ln(\y)}); % set the u(y) coordinate
+\coordinate (Up) at ({\p*\x+(1-\p)*\y},{ln(\p*\x+(1-\p)*\y)}); % set the u(p*x+(1-p)*y) coordinate
+\draw (Ux) -- coordinate[pos=1-\p] (Up-mid) (Uy); % set the coordinate on the linear curve
+\path let \p1=(Up-mid), \n1={pow(e,\y1*0.03514)} in (28.4576*\n1,\y1) coordinate (Up-mid2); 
+\draw[my grid] (Ux) |- node[below]{$x_{1}$} (origin) |- node[left]{$u(x_{1})$} cycle;
+\draw[my grid] (Uy) |- node[below]{$x_{2}$} (origin) |- node[left]{$u(x_{2})$} cycle;
+%\draw[my grid] (Up) |- (origin) |- cycle;
+\draw[my grid] (Up) |- (origin);
+%\draw[my grid] (Up-mid2) |- node[below,font=\scriptsize]{$c(F,u)$} (origin) |- node[left]{$pu(x)+(1-p)u(y)$} cycle;
+\draw[my grid] (Up-mid2) |- node[below right]{\hspace{.05cm} $\pi$} (origin) |- node[left,font=\scriptsize]{$E[u(x)]$} cycle;
+\draw[my grid] (Up-mid) -- (Up-mid2);
+\end{tikzpicture}
+```
+
+???
+This is where we'll end for the first class, 2/4. Now let's go through a quick in-class quiz.
+
+End class with discussion/preview of homework 1 and opportunity to ask questions regarding the final project or other assignments.
+
+---
+# Example
+Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth of <span>&#36;</span>100,000. With probability 0.25, this person will get sick and incur a cost of <span>&#36;</span>20,000. Their wealth in the sick state is therefore <span>&#36;</span>80,000. What is the maximum amount this person is willing to pay for health insurance?<br>
+
+--
+
+1. Calculate expected wealth, $E[w]$.
+2. Calculate expected utility, $E[U(w)]$.
+3. Calculate value of wealth that gives you $u=E[U(w)]$ (based on the utility function).
+4. Calculate the risk premium as the difference between (1) and (3).
+5. Calculate maximum willingness to pay by adding the risk premium and the expected cost.
+
+???
+We left class on Thursday with this example, so that's where we'll pick back up today. Split into breakout groups and work on this problem together. Hint: To find $u=E[U(w)]$, take the inverse of the natural log, which is $exp^{u}$ in this case.
+
+Regroup after abount 10 minutes to discuss areas of confusion or disagreement.
+
+---
+# Answer
+```{r, include=FALSE}
+ecost <- .25*20000
+eu <- .75*log(100000) + .25*log(80000)
+inv.u <- exp(eu)
+wtp <- 100000-inv.u
+```
+We're asked to find some wealth level, $y$, such that the person is indifferent between $y$ with certainty versus the risky wealth levels, $w_{h}=$ <span>&#36;</span>100,000 with probability 0.75 or $w_{s}=$ <span>&#36;</span>80,000 with probability 0.25.<br>
+
+The person's expected utility with uncertainty is: $E[u]=0.75\times \ln (100000) + 0.25 \times \ln (80000) =$ `r eu`. We therefore need to find $y$ such that $u(y)=$ `r eu`. Given our utility function, this is satisfied for $y=$ <span>&#36;</span>`r format(inv.u,digits=5,big.mark=",")`. Since the person starts with <span>&#36;</span>100,000, they are willing to pay a maximum of <span>&#36;</span>100,000 $-$ <span>&#36;</span>`r format(inv.u,digits=5,big.mark=",")` $=$ <span>&#36;</span>`r format(wtp,digits=5,big.mark=",")` for health insurance.
+
+Finally, since the expected cost of care is <span>&#36;</span>`r format(ecost,digits=5,big.mark=",")`, we can break this <span>&#36;</span>`r format(wtp,digits=5,big.mark=",")` into its actuarily fair premium of <span>&#36;</span>`r format(ecost,digits=5,big.mark=",")` plus the loading factor or risk premium of <span>&#36;</span>`r format(wtp-ecost,digits=5,big.mark=",")`.
+
+---
+# In-class Problem: Demand for insurance
+Assume that utility takes the log form, $u(x)=ln(x)$. If someone is healthy, they maintain their current wealth of <span>&#36;</span>100, and if they become ill, they must incur a cost of <span>&#36;</span>50. Answer the following questions based on this setup.
+
+1. Calculate the risk premium and willingness to pay based on a probability of illness of 0.1.
+2. Repeat part (1) using a probability of illness of 0.2.
+3. Repeat part (1) using a probability of illness of 0.5.
+4. Explain how these values differ and why. What might this say about the profitability of insurance in a market with many sick people?
+
+???
+Let's practice this again with a couple of extensions. Split into breakout groups and work on this for another 10-15 minutes.
+
+Regroup as a class and discuss areas of confusion.
+
+---
+# What affects the risk premium?
+
+Based on the graph, what do you think are some things that might affect the risk premium?<br>
+
+--
+
+1. Curvature of the utility function
+
+2. Probability of illness
+
+3. Cost of illness
+
+
+---
+# High risk pools
+
+- A "high-risk pool" is a way to put people that are more likely to incur high medical costs all in one plan. 
+- Recalling the curvature of demand function, probability of illness, and cost of illness...do you think a high-risk pool is sustainable (think about the profit to the insurer)?<br>
+
+--
+
+Let's look at this in practice, [KFF High-risk Pools](https://www.kff.org/health-reform/issue-brief/high-risk-pools-for-uninsurable-individuals/)
+
+
+---
+# Other reasons to buy health insurance
+
+1. Increase bargaining power with providers
+
+2. Manage where care is delivered (due to information problems in health care decisions)
+
+
+---
+# Main takeaways
+
+1. Calculate risk premium and maximum willingness to pay for health insurance
+
+2. Explain and show graphically how changes in the utility function, probability of illness, and the cost of illness affect the risk premium
+
+3. Discuss how these factors (preferences, probability of illness, and cost of illness) help us in understanding the effects of real-world health insurance policy.
+
+---
+# Adverse selection
+In practice, people know more about their health than insurers. This is a form of <b>asymmetric information</b>.
+
+--
+Here's a good example, [Costs during special enrollment periods](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2019.01155).
+
+
+???
+Let everyone read the abstract and brainstorm how this reflects a form of asymmetric information. Who has "more" information here?
+
+---
+# Textbook adverse selection
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-selection}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[scale=0.7, every node/.style={transform shape}]
+\draw[thick,->] (0,0) -- (0,6) node[anchor=north west] {$p$};
+\draw[thick,->] (0,0) -- (8,0) node[anchor=south east] {$q$};
+\draw (0,5) node[anchor=north east]{Demand} -- (6,1);
+\draw (0,3) node[anchor=north east]{MC} -- (6,2);
+\draw (0,3) node[anchor=south west]{AC} -- (6,0.5);
+\draw (6,0) -- (6,6) node[anchor=north east] {$\bar{q}$};
+\end{tikzpicture}
+```
+
+
+???
+This is where we left of on Thursday. Let's revisit this graph quickly and walk through it's main parts. Draw the risk premium and willingness to pay on the slides.
+
+---
+# Possible outcomes
+
+1. Demand above AC: full insurance and no problems from adverse selection
+2. Demand intersects AC at some point: underinsurance from people willing and able but ultimately not purchasing
+3. Demand below AC: death spiral! (or, less dramatic, unraveling)<br>
+
+--
+
+Show this on your own with three different graphs.
+
+???
+Quick class poll. Who has heard of a "death spiral"? What about "unravelling"?
+
+
+---
+# Unravelling
+For any amount of unravelling, we need at least two features in the market:<br>
+
+1. Individuals select plans based on health needs (which is private information)
+2. Common price to all enrollees of a given plan (community rating)
+
+
+---
+# Example
+Assume the insurer's cost function is $C=100q - 2q^{2}$, where $q$ denotes the number of people enrolled in the plan. Further assume that demand is given by $D=140-4q$. Assuming the insurer enters the market with $p_{1}=40$,<br>
+
+1. What is the next year's price (if profits are <span>&#36;</span>0 based on period 1)? 
+2. What is the equilibrium price?
+
+???
+We'll do this problem together as one large group. You'll have a chance to work on a similar problem together in your breakout groups.
+
+---
+# Answer
+To solve this, we need to first calculate the marginal cost curve, $mc=100-4q$, and the average cost curve, $ac=100-2q$. At a price of $p=40$, we know that quantity demanded will be $q=25$. At that point, the average cost is then <span>&#36;</span>50. Since $AC>p$, the firm is losing money. If they set prices to break-even, then next period's price would be set to their observed AC, $p_{2}=$ <span>&#36;</span>50. We can find the equilibrium price as the point where the AC and D curves intersect, which occurs at $q$ of 20 and price of <span>&#36;</span>60.
+
+
+---
+# In-class Problem: Adverse selection
+Assume that the insurer's cost function is given by $C=100q - 2q^{2}$, where $q$ denotes the number of people enrolled in the plan. Further assume that the inverse demand function takes the form, $D=110 - 3q$, and that there are 20 individuals total in this market.
+
+1. If the insurer enters the market at a price of <span>&#36;</span>65, what is the insurer's profit (or loss)?
+2. What price does the insurer set next year if they set price equal to average cost in the prior year?
+3. What is the equilibrium price in this market?
+4. What if there is a <span>&#36;</span>10 penalty imposed for those that do not purchase health insurance?
+
+---
+# Death spiral!
+
+[Paul Ryan on Death Spirals](https://www.washingtonpost.com/videonational/ryan-obamacare-is-in-death-spiral/2017/01/05/375a49da-d366-11e6-9651-54a0154cf5b3_video.html)
+
+---
+# Death spiral!
+
+.center[
+  ![](pics/aca-premiums.png)
+]
+
+<div class="smalltext">Source: <a href="https://www.kff.org/health-costs/issue-brief/how-aca-marketplace-premiums-are-changing-by-county-in-2020/">Kaiser Family Foundation</a></div>
+
+
+---
+# Death spiral!
+So, are the exchanges in a "death spiral"?<br>
+
+--
+<br>
+
+Standard & Poor's writes: “The ACA individual market is not in a 'death spiral.' However, every time something new (and potentially disruptive) is thrown into the works, it impedes the individual market’s path to stability.”
+
+
+---
+# Some potential policy solutions
+
+1. Subsidize consumers
+2. Subsidize insurers
+3. Mandate purchases<br>
+
+--
+
+Can you examine each of these policies graphically? How do they differ from the patient's or government's point of view?
+
+---
+# Effects from other insurance markets
+Based on our discussion of adverse selection and health insurance markets, what would you expect to happen if we increased the Medicare age from 65 to 70 years old? 
+
+
+---
+# Advantageous selection
+What if individuals who are high risk are also less risk-averse? In this case, individuals who are willing to pay the most for health insurance (the most risk averse) are actually less risky and therefore the cheapest to insure. Very different policy implications (e.g., individual mandate is bad in this case). 
+
+
+---
+# Main takeaways
+1. Explain, using a graph, how unravelling could occur in a market with adverse selection.
+
+2. Discuss and show graphically how an individual mandate or subsidies could help to alleviate or minimize the adverse selection problem.
+
+---
+# History of health insurance in the U.S.
+Only developed country to rely on employer provided insurance market - why?<br>
+
+--
+
+1. Stabalization act of 1942 (wages frozen but not benefits)
+
+2. Tax exemption for insurance expenditures (1954)
+
+---
+# Current policy
+1. Increasingly reliant on private market, even for public insurance programs, where adverse selection is most salient
+2. [Health insurance exchanges](https://www.cms.gov/CCIIO/Programs-and-Initiatives/Health-Insurance-Marketplaces/index.html)
+3. [Individual mandate](https://www.healthcare.gov/fees/fee-for-not-being-covered/)
+4. [Premium and cost-sharing subsidies](http://www.kff.org/health-reform/issue-brief/explaining-health-care-reform-questions-about-health/)
+5. [Insurer subsidies](http://www.kff.org/health-reform/issue-brief/explaining-health-care-reform-risk-adjustment-reinsurance-and-risk-corridors/)
+6. Medicaid expansion
+7. [Risk adjustment](https://www.cms.gov/Medicare/Health-Plans/MedicareAdvtgSpecRateStats/Downloads/RTC-Dec2018.pdf)
+
+
+---
+# Current debate
+
+1. Individual mandate went to the supreme court, as did the (originally) mandatory Medicaid expansion
+
+2. Penalty for individual mandate has since been reduced to $0 (so really no mandate anymore). 
+
+3. Trump administration refused to pay cost-sharing subsidies
+
+---
+# Common questions
+1. Why so much opposition to the ACA?
+2. Why repeal the existing provisions in the ACA that cover pre-existing conditions?
+3. What are the differences between employer-provided health care and health care provided by the ACA?
+4. Other than insurance, in what ways does the ACA affect health care?
+5. How does the government support the ACA?
+6. What are the problems with the ACA and what are the replacement options? [fun "medicare for all" dashboard](http://shift.cidma.us/)
+
+
+---
+# In context
+We motivated this entire section of the class with the example of Humana withdrawing from the ACA exchanges. This example and our policy discussion highlight at least four things:
+
+1. Patient health has a major effect on insurer costs (we showed this with some basic problems).
+2. There is theoretically less available profit with a really sick patient pool (we showed this too). Budget constraints compound this problem.
+3. With community ratings, standard insurance market will leave some people uninsured who are willing and able to purchase.
+4. Lots of policy levers to address these issues, but the magnitude of each lever is an empirical question.
