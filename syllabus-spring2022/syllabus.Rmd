@@ -41,7 +41,7 @@ drive_download("Bibliography/BibTeX_Library.bib", overwrite=TRUE, path='BibTeX_L
 
 # Course Description
 
-This course examines the industrial organization of health care markets in the U.S., including underlying theory, empirical findings, and related health care policy. We will study insurance markets, informational asymmetries between physicians and patients, and hospital pricing.
+This course examines the industrial organization of health care markets in the U.S., including underlying theory, empirical findings, and related health care policy. We will focus specifically on insurance markets, informational asymmetries between physicians and patients, and hospital pricing.
 
 **Prerequisites:** Economics 101 (Principles of Microeconomics). Some basic knowledge of calculus and derivatives is also required, but not necessarily the official Math 111 (Calculus I) course at Emory. 
 
