@@ -1,7 +1,7 @@
 ---
 title: "Module 3: Hospital Pricing and Competition"
-author: Ian McCarthy, Emory University
-date: Econ 372, Spring 2022
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
 header-includes: 
   - \usepackage{tikz}
   - \usepackage{amsmath}

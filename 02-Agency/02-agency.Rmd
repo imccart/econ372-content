@@ -1,7 +1,7 @@
 ---
 title: "Module 2: Physician Agency and Treatment Decisions"
-author: Ian McCarthy, Emory University
-date: Econ 372, Spring 2021
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
 header-includes: 
   - \usepackage{tikz}
   - \usepackage{amsmath}
