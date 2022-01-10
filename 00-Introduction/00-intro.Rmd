@@ -341,7 +341,7 @@ name: why
 
 1. Health and health care are constantly changing
 
-2. Health expenditures in 2019: <span>&#36;</span>3.8 trillion, 17.7% of GDP, <span>&#36;</span>11,582 per person (from [NHE Fact Sheet](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet))
+2. Health expenditures in 2020: <span>&#36;</span>4.1 trillion, 19.7% of GDP, <span>&#36;</span>12,530 per person (from [NHE Fact Sheet](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData/NHE-Fact-Sheet))
 
 3. U.S. health care is uniquely inefficient in many ways
 
