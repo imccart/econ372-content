@@ -67,7 +67,35 @@ xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
 
 # Airport Idea:
 
+Our "big picture" idea for this module is:
 
+<center>
+**Firms also face uncertainty**
+</center>
+
+---
+# Table of contents
+
+1. [Real-life Motivation](#motivate)
+
+2. [Insurance and Risk](#risk)
+
+3. [Demand for Health Insurance](#demand)
+
+4. [Adverse Selection](#selection)
+
+5. [Current Policy](#policy)
+
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: motivate
+
+# An Example from Real Life
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
 
 
 ---
@@ -76,12 +104,13 @@ In 2018, Humana exited the ACA exchanges due to an "unbalanced risk pool based o
 
 --
 
-- What do you think this means?
-- What is the underlying business reason here?<br>
-
---
-
 Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](https://www.npr.org/sections/thetwo-way/2017/02/14/515167491/aetna-and-humana-call-off-merger-after-court-decision)
+
+
+???
+- Before we go too much further, how many of you are familiar with "the exchanges"? Do you know what I mean when I say that?
+- What do you think an "unbalanced risk pool" means?
+- What is the underlying business reason for Humana to exit the exchanges?
 
 
 
@@ -100,7 +129,7 @@ Fun fact: Humana and Aetna's merger deal had just been blocked. [NPR Article](ht
 
 
 ???
-These graphs show that expenditures are closely linked to health. That means insurers need to be aware of their customers. The way we describe the health of an insurer's customers is by something called a "risk pool". Managing the risk pool is really hard and critical.
+These graphs show that expenditures are closely linked to health. That means insurers need to be aware of their customers. The way we describe the health of an insurer's customers is by something called a "risk pool". Managing the risk pool is really hard but very important.
 
 
 <!-- New Section -->
@@ -158,14 +187,13 @@ Definition: Preferences take the form of a utility function, $u(x)$, which tells
 
 --
 
-Expected utility the combines expected value and utility...<br>
+Expected utility combines expected value and utility...<br>
 $E[u(x)] = p_{1}u(x_{1}) + p_{2}u(x_{2})$
 
 
 ???
 Before moving on, this is a good time to pause and see how we're doing. These may seem like very simple concepts, but they are important. On our scale Zoom poll, "I understand the concepts of probability, expected value, and utility preferences."
 
-Now let's take a quick break and come back in 5.
 
 ---
 # Risk preferences
@@ -231,7 +259,7 @@ What does this mean in words?
 
 
 ???
-This graph has two different things on it. Let's focus on one at at time. Do this on our class notebook screen.
+This graph has two different things on it. Let's focus on one at at time. Don't forget to use the pen!
 
 ---
 # In-class Problem: Expected values
@@ -241,9 +269,6 @@ An individual starts with a wealth of <span>&#36;</span>100,000. With probabilit
 2. Assume this individual has a utility function of the form, $u(w) = w^{0.20}$. What is this person's expected utility?
 3. Calculate this person's utility if they were to incur the cost of illness with certainty. Is this utility higher or lower than what you found in part (2)?
 
-
-???
-Let's do this together in breakout rooms. I'll split you all up randomly and I'll drop in to help.
 
 
 ---
@@ -273,6 +298,19 @@ Put these values on our graph to see where we're headed.
 
 Quick poll: Are we comfortable with the difference between expected utility and the utility at the expected value?
 
+Takeaway so far - when you purchase health insurance, you do two things: 1) "pre-pay" for health care; and 2) pay to avoid financial risk.
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: demand
+
+# Demand for Health Insurance
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
 ---
 # Risk premium
 
@@ -283,6 +321,8 @@ The maximum amount of money that a risk-averse person is willing to pay to avoid
 This is part of how we measure willingness-to-pay for health insurance.
 
 ---
+count: false
+
 # Risk premium
 ```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-premium}
 \usetikzlibrary{calc}
@@ -314,10 +354,6 @@ This is part of how we measure willingness-to-pay for health insurance.
 \end{tikzpicture}
 ```
 
-???
-This is where we'll end for the first class, 2/4. Now let's go through a quick in-class quiz.
-
-End class with discussion/preview of homework 1 and opportunity to ask questions regarding the final project or other assignments.
 
 ---
 # Example
@@ -331,10 +367,6 @@ Consider the utility function, $u(w)=\ln(w)$. An individual starts with a wealth
 4. Calculate the risk premium as the difference between (1) and (3).
 5. Calculate maximum willingness to pay by adding the risk premium and the expected cost.
 
-???
-We left class on Thursday with this example, so that's where we'll pick back up today. Split into breakout groups and work on this problem together. Hint: To find $u=E[U(w)]$, take the inverse of the natural log, which is $exp^{u}$ in this case.
-
-Regroup after abount 10 minutes to discuss areas of confusion or disagreement.
 
 ---
 # Answer
@@ -406,6 +438,17 @@ Let's look at this in practice, [KFF High-risk Pools](https://www.kff.org/health
 
 3. Discuss how these factors (preferences, probability of illness, and cost of illness) help us in understanding the effects of real-world health insurance policy.
 
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: selection
+
+# Adverse Selection
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
 ---
 # Adverse selection
 In practice, people know more about their health than insurers. This is a form of <b>asymmetric information</b>.
@@ -433,8 +476,6 @@ Let everyone read the abstract and brainstorm how this reflects a form of asymme
 ```
 
 
-???
-This is where we left of on Thursday. Let's revisit this graph quickly and walk through it's main parts. Draw the risk premium and willingness to pay on the slides.
 
 ---
 # Possible outcomes
@@ -448,12 +489,12 @@ This is where we left of on Thursday. Let's revisit this graph quickly and walk 
 Show this on your own with three different graphs.
 
 ???
-Quick class poll. Who has heard of a "death spiral"? What about "unravelling"?
+Quick class poll. Who has heard of a "death spiral"? What about "unraveling"?
 
 
 ---
-# Unravelling
-For any amount of unravelling, we need at least two features in the market:<br>
+# Unraveling
+For any amount of unraveling, we need at least two features in the market:<br>
 
 1. Individuals select plans based on health needs (which is private information)
 2. Common price to all enrollees of a given plan (community rating)
@@ -534,6 +575,16 @@ What if individuals who are high risk are also less risk-averse? In this case, i
 1. Explain, using a graph, how unravelling could occur in a market with adverse selection.
 
 2. Discuss and show graphically how an individual mandate or subsidies could help to alleviate or minimize the adverse selection problem.
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: policy
+
+# Health Insurance and Current Policy
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
 
 ---
 # History of health insurance in the U.S.
