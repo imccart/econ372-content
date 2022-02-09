@@ -626,6 +626,7 @@ Only developed country to rely on employer provided insurance market - why?<br>
 6. What are the problems with the ACA and what are the replacement options? [fun "medicare for all" dashboard](http://shift.cidma.us/)
 
 
+
 ---
 # In context
 We motivated this entire section of the class with the example of Humana withdrawing from the ACA exchanges. This example and our policy discussion highlight at least four things:
@@ -634,3 +635,26 @@ We motivated this entire section of the class with the example of Humana withdra
 2. There is theoretically less available profit with a really sick patient pool (we showed this too). Budget constraints compound this problem.
 3. With community ratings, standard insurance market will leave some people uninsured who are willing and able to purchase.
 4. Lots of policy levers to address these issues, but the magnitude of each lever is an empirical question.
+
+
+---
+# Some papers
+
+- [Adverse Selection in Medicaid](https://www.journals.uchicago.edu/doi/10.1086/716464)
+- [New Risk-Adjustmentystem Was Associated With Reduced Favorable Selection in Medicare Advantage](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344)
+
+---
+# How to read a paper
+
+- Purpose (what are you trying to get out of this)
+  - Understand policy environment, MA, risk adjustment
+  - How did change in risk-adjustment affect enrollments
+  
+- Strategy (where to focus your energy)
+  - Abstract, intro, "how measures ... might work"
+  - Study results
+
+--
+In this case, reading for:
+  - Policy environment
+  - Main results
