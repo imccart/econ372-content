@@ -63,6 +63,28 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
 xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
 ```
 
+# Table of contents
+
+1. [Physician Agency and Variation in Care](#motivate)
+
+2. [Fixed Payments](#fixed)
+
+3. [Capitated Payments](#capitated)
+
+4. [Current Policy](#policy)
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: motivate
+
+# What is Physician Agency and Why Do We Care?
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
+---
 # What is physician agency
 
 <br>
@@ -73,6 +95,7 @@ xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
 
 ???
 The idea of physician agency is simple - physicians know more than patients, and so some amount of care is malleable.
+
 
 ---
 # Variation in care
@@ -155,10 +178,15 @@ Solve the model in two steps:<br>
 2. Substitute into physician profit function, $\pi=(p-c)x = B(x)-NB^{0} - cx$, and solve for $x$<br>
 
 ---
-count: false
-
 # Solving the model
+
 This two step approach applies when prices and quantity of care are variable. If the physician cannot set price, then we just work off of the constraint, $B(x)-\bar{p}x=NB^{0}$. 
+
+
+--
+
+Why? This is a corner solution...can't just take a derivative.
+
 
 ---
 # In-class Problem: Physician agency
@@ -208,6 +236,16 @@ First let's re-write the constraint such that $px = 8x^{1/2}$ and $\pi = 8x^{1/2
 
 But if they could choose on their own, the patient would prefer to maximize their net benefit. This would occur at $4x^{-1/2}=p$, which yields $x=(32/15)^{2} \approx 4.5$ at $p=15/8$.
 
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: fixed
+
+# Agency with Fixed Prices (FFS Payments)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
 ---
 # What are fee-for-service payments?
 
@@ -222,8 +260,6 @@ But if they could choose on their own, the patient would prefer to maximize thei
 - Can you think of some problems with this approach?
 
 ---
-count: false
-
 # How are FFS payments calculated?
 
 - In 1983, Medicare switched to a "Prospective Payment System
@@ -231,8 +267,6 @@ count: false
 - **Fixed** based on the Diagnosis Related Group (DRG) code and other hospital characteristics
 
 ---
-count: false
-
 # How are FFS payments calculated?
 
 Let's work through a simple example:
@@ -245,8 +279,6 @@ Let's work through a simple example:
 
 
 ---
-count: false
-
 # How are FFS payments calculated?
 
 **Step 1**<br>
@@ -258,6 +290,14 @@ $\text{Base Payment}\times (1 + \text{DSH Adj} + \text{Teaching Adj}) = \text{Fi
 --
 
 Let's look at some of these in real life...
+
+
+---
+# Downside to PPS system?
+
+- Still an incentive for overuse
+- Incentive to [upcode](https://theincidentaleconomist.com/wordpress/upcoding-pt-one-what-and-how/)
+
 
 ---
 # In-class Problem: Agency and fixed prices
@@ -279,9 +319,16 @@ b(x)\frac{\mathrm{d}x}{\mathrm{d}p} - x - p\frac{\mathrm{d}x}{\mathrm{d}p} &= 0 
 \end{align*}$$
 
 ---
+# Comparative statics
+
+- This comes from the physician's constraint, which is essentially a reflection of demand
+- Higher $\bar{p}$ means the constraint is met at a lower value of $x$, and vice versa
+
+---
 # Why does this matter?
 
 Say we want to reduce health care utilization, and we try to do so by cutting payments. Will this work?
+
 
 ---
 # Fixed payments in practice
@@ -290,6 +337,27 @@ Real life is a little more complicated!
 
 - Often more than one treatment to consider
 - Often more than one payer (private and public) to consider
+- Patient's shielded from the full cost of care
+- Benefit function is unknown and subject to asymmetric information
+
+---
+# Some other ways to model provider treatment decisions
+
+- Target income hypothesis
+- Physician-induced demand
+- Real life is more nuanced
+
+$$u(x) = V(\pi) -e(x) + \alpha B(x)$$
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: capitated
+
+# Capitated Payments and Physician Agency
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
 
 
 ---
@@ -306,6 +374,7 @@ Real life is a little more complicated!
 - No "fully capitated" payments in the U.S.
 - Closest in the U.S. is an "accountable care organization"
 - More common in UK, Canada, and other public systems
+
 
 --
 
