@@ -1,0 +1,116 @@
+---
+title: "Module 2: Physician Agency and Treatment Decisions"
+subtitle: "Part 0: Motivation"
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{amsmath}
+  - \usepackage{pgf}
+  - \usepackage[xcolor=pst]{pstricks}
+  - \usepackage{pgfshade}
+  - \usepackage{pdftools}
+output:
+  xaringan::moon_reader:  
+    css: [default, metropolis, metropolis-fonts, custom.css] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+knit: pagedown::chrome_print       
+---
+
+<!-- Adjust some CSS code for font size and maintain R code font size -->
+<style type="text/css">
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+</style>
+
+
+<!-- Set R options for how code chunks are displayed and load packages -->
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=3, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if(options$fig.callout) {
+    options$echo = FALSE
+  }
+  options
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
+               scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
+               ggrepel, survey, foreign, devtools, pdftools, xaringanExtra)
+```
+
+```{r xaringan-scribble, echo=FALSE}
+xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
+```
+
+# What is physician agency
+
+<br>
+
+.center[
+  ![](https://media.giphy.com/media/3orifb9GcyGZ8ClIuk/giphy.gif)
+]
+
+???
+The idea of physician agency is simple - physicians know more than patients, and so some amount of care is malleable.
+
+
+---
+# Variation in care
+
+.pull-left[
+  ![](pics/dartmouth_map.png)
+]
+
+.pull-right[
+  ![](pics/dartmouth_dist.png)
+]
+
+<div class="smalltext">Source: <a href="https://www.dartmouthatlas.org">Dartmouth Atlas of Health Care</a></div>
+
+???
+Such variation in care is a clear reflection of just how malleable health care is. Some areas have substantially more care than others which is not explained by health or patient preferences.
+
+Why does this variation matter? It suggests that there's an opportunity to reduce care without hurting patients.
+
+---
+# Wasteful?
+- Estimates are that more than 30% of health care expenditures are "wasteful": [(The Atlantic, 2013)](https://www.theatlantic.com/health/archive/2013/12/youre-getting-too-much-healthcare/281896/)
+
+- Some clear areas of waste:
+  - Payment differentials by location of treatment (policy quirks)
+  - Better imaging with little benefit
+  - Proton treatment (for some conditions)
+  - Heart stents (for some patients)
+  - Arthroscopic knee surgery<br>
+  
+--
+
+Many estimates of "waste" are after-the-fact. It's actually very hard to identify waste before-hand. [Report on End-of-life Spending](http://news.mit.edu/2018/value-late-life-health-care-spending-medicare-0628)
+
+---
+# More examples
+
+- Here's a great example of the role of physician agency and what it might mean for health care spending, [link](https://nihcm.org/publications/is-health-care-shoppable-1)
+

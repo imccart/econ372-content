@@ -1,0 +1,157 @@
+---
+title: "Module 3: Hospital Pricing and Competition"
+subtitle: "Part 0: Motivation"
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{amsmath}
+  - \usepackage{pgf}
+  - \usepackage[xcolor=pst]{pstricks}
+  - \usepackage{pgfshade}
+  - \usepackage{pdftools}
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+knit: pagedown::chrome_print
+---
+
+<!-- Adjust some CSS code for font size and maintain R code font size -->
+<style type="text/css">
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+</style>
+
+
+<!-- Set R options for how code chunks are displayed and load packages -->
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=3, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if(options$fig.callout) {
+    options$echo = FALSE
+  }
+  options
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
+               scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
+               ggrepel, survey, foreign, devtools, pdftools, xaringanExtra)
+```
+
+```{r xaringan-scribble, echo=FALSE}
+xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
+```
+
+
+# History of hospitals
+
+- Before 1900: Just don't go to the hospital! (at least in the U.S.)
+  - mainly charity care
+  - hospitals were a learning experience for physicians
+
+- Early 1900s: big safety and technological improvements
+
+- Mid 1900s: huge growth, especially in wealthy and urban areas
+  - Medicare and Medicaid in 1965 (Social Security Act)
+
+---
+# Now
+As we know, we now spend <b>a lot</b> on health care in the U.S., and a big part of that is very high health care prices (and a big part of that is hospital prices)
+
+
+---
+# Ownership types
+
+1. Private not-for-profit: About 60%
+
+2. For-profit: About 20%
+
+3. State and local gov't: About 20%
+
+<br>
+<div class="smalltext">Source: <a href="https://www.aha.org/statistics/fast-facts-us-hospitals">AHA Fast Facts</a></div>
+
+---
+# Non-profit hospitals
+What does it mean to be a not-for-profit hospital?<br>
+
+--
+
+From an economics perspective:
+- Hospital assumed to maximize some objective function, $u(q,z)$, subject to a production constraint
+
+- $q$ denotes quantity of care and $z$ denotes quality of care
+
+- Production is constrained by the break-even condition
+
+---
+# Non-profit hospitals
+What does it mean to be a not-for-profit hospital?<br>
+
+--
+
+From a practical perspective:
+- Profits must be re-invested into the hospital
+
+- Must show "community benefit" (no consensus definition...includes uncompensated care, services to Medicaid, and certain specialized services that are generally unprofitable)
+
+- No taxes! and tax-free bonds
+
+---
+# Non-profit hospitals and tax benefits
+- <span>&#36;</span>24.6 billion in tax exemptions in 2011
+
+- <span>&#36;</span>62.4 billion in "community benefits"<br>
+
+- [Washington Post Article](https://www.washingtonpost.com/national/health-science/value-of-tax-breaks-for-nonprofit-hospitals-doubled-in-a-decade/2015/06/17/4162c640-1450-11e5-9ddc-e3353542100c_story.html?utm_term=.4f877a72a09f)<br>
+
+--
+
+What do you think? Are these community benefits measured appropriately?
+
+
+---
+# What is a non-profit hospital?
+The real question is...what is the hospital's objective function?
+
+- For-profit in disguise
+- Output maximizers
+- Tax-benefit maximizers
+- Social welfare maximizers<br>
+
+--
+
+Most empirical evidence doesn't find much of a difference between FP and NFP hospitals, except FPs have higher prices. Why is that?
+
+
+---
+# For-profit hospitals
+These are easier to study theoretically...just a standard profit maximizing firm.
+
+- $\pi=P(q)q - C(q),$ where $q$ denotes quantity of care
+
+- Firm has some market power and so faces a downward sloping demand curve
+
+

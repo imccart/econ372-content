@@ -1,0 +1,223 @@
+---
+title: "Module 3: Hospital Pricing and Competition"
+subtitle: "Part 1: Single and Two-price Market"
+author: Ian McCarthy | Emory University
+date: Econ 372 #"`r format(Sys.time(), '%d %B %Y')`"
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{amsmath}
+  - \usepackage{pgf}
+  - \usepackage[xcolor=pst]{pstricks}
+  - \usepackage{pgfshade}
+  - \usepackage{pdftools}
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+knit: pagedown::chrome_print
+---
+
+<!-- Adjust some CSS code for font size and maintain R code font size -->
+<style type="text/css">
+.remark-slide-content {
+    font-size: 30px;
+    padding: 1em 2em 1em 2em;    
+}
+.remark-code, .remark-inline-code { 
+    font-size: 20px;
+}
+</style>
+
+
+<!-- Set R options for how code chunks are displayed and load packages -->
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=3, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if(options$fig.callout) {
+    options$echo = FALSE
+  }
+  options
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
+               scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
+               ggrepel, survey, foreign, devtools, pdftools, xaringanExtra)
+```
+
+```{r xaringan-scribble, echo=FALSE}
+xaringanExtra::use_scribble(rgb(0.9, 0.5, 0.5))
+```
+
+
+# Table of contents
+
+1. [Single Prices](#single-prices)
+
+2. [Two Prices](#twoprice)
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: single-prices
+
+# Unilateral Pricing (depends on the objective)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
+---
+# Pricing for NFP hospitals
+Objective is to maximize some function of profits and quantity of care provided, denoted by<br>
+
+$U\left( \pi_{j} = \pi_{i,j} + \pi_{g,j},D_{i,j}, D_{g,j} \right)$<br>
+
+where $\pi_{j}$ denotes total profits for hospital $j$ and $D_{i,j}$ denotes hospital demand from insurer $i$. We assume that $p_{j}$ is exogenous and determined by a public payer, so the hospital need only set its price for private insurance customers, $p_{i}$.
+
+---
+# Solution for NFP hospital
+The hospital chooses $p_{i}$ such that<br>
+
+$\frac{\mathrm{d}U}{\mathrm{d}p_{i}} = U_{1} \pi_{1}^{i} + U_{2} \frac{\mathrm{d}D_{i}}{\mathrm{d}p_{i}}=0$,<br>
+
+where $U_{1}$ denotes the derivative of $U(\cdot)$ with respect to its first argument and similarly for $U_{2}$.<br>
+
+--
+
+In general, we can't solve this directly without knowing the hospital's utility function. 
+
+
+---
+# Assuming pure profit maximization
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-fp-pricing}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
+\draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
+\draw [thick, blue!90](0,7)-- (8,2)node[right, black, align=center]{\small Demand};
+\draw [thick, purple!90](0,7)-- (6,1)node[black, right]{\small Marginal Revenue};
+\draw [thick, blue!90](1,4) to [out=300, in=240] (7,5)node[right,black]{\small Average total cost};
+\draw [thick, purple!90](2,1) node[black, left, align=center]{\small Marginal \\cost}--(5.25, 6);
+\draw[fill] (3.6,3.4) node[right] {$A$} circle [radius=0.1];
+\draw[fill] (3.6,4.75) node[above] {$B$} circle [radius=0.1];
+\draw[dashed](0,4.75) node[left, align=center]{\small Monopoly\\ \small price}--(3.6,4.75)--(3.6,0)node[below]{$q^{*}$};
+\end{tikzpicture}
+```
+
+---
+# Example
+
+Consider the firm's demand curve, $d=16-q$, and cost curve, $c(q)=5+q^{2}$. Where will the firm produce and at what price? What is the firm's markup over marginal cost?
+
+--
+The profit function is, $\pi = (16-q)q - 5 - q^{2}$. Differentiating with respect to quantity yields $-q + 16 - q - 2q= 16-4q=0$, or $q=4$. At this quantity, the price is $p=12$, which is a markup of 4 over the marginal cost (or 50% markup).
+
+---
+# In-class problem (unilateral pricing)
+
+Consider the firm's demand curve, $d=40-2q$, and cost curve, $c(q)=5q+\frac{1}{2}q^{2}$. 
+
+1. What is the firm's profit maximizing choice of quantity and price? 
+2. What is the markup over marginal cost?
+
+
+<!-- New Section -->
+---
+class: inverse, center, middle
+name: twoprice
+
+# Two-price Market
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=1055px></html>
+
+
+---
+# Relationship between prices
+In health care, providers usually face two prices:
+
+1. A price fixed by Medicare and Medicaid, $p_{m}$.
+2. A price that is negotiated with insurers, $p_{n}$.
+
+How does $p_{m}$ affect $p_{n}$?<br>
+
+---
+# Two price market and NFP
+Although we don't know the general solution for the private price, we can find how it varies with the public price...<br>
+
+--
+
+$$\frac{\mathrm{d}p_{i}}{\mathrm{d}p_{j}} = - \frac{U_{11}\pi_{1}^{i}\pi_{1}^{j} + \frac{\mathrm{d}D_{i}}{\mathrm{d}p_{i}}U_{12}\pi_{1}^{j}}{\frac{\mathrm{d}^{2}U}{\mathrm{d}p_{i}^{2}}}$$
+
+---
+# Two price market and FP
+.pull-left[
+- Sell to "private" market as long as marginal revenue exceeds the public price
+- Switch to "public'" market otherwise, and sell to the point where price equals marginal cost
+]
+
+.pull-right[
+```{tikz echo=FALSE, fig.ext='png', cache=TRUE, tikz-fp-twoprice}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.40, every node/.style={black,opacity=1, transform shape}]
+\draw [thick](0,9) node [left,align=center] {\small Costs and\\ \small Revenue} -- (0,0) node [below left] {$0$} -- (10,0) node [below, align=center] {\small Quantity};
+\draw [thick, blue!90](0,7)-- (8,2)node[right, black, align=center]{\small Demand};
+\draw [thick, purple!90](0,7)-- (4,1)node[black, right]{\small Marginal Revenue};
+\draw [thick, purple!90](1.5,1) node[black, left, align=center]{\small Marginal \\cost}--(5.75, 6.5);
+\draw (0,4) node[black, left]{$p_{m}$} -- (7,4);
+\draw[fill] (2,4) node[above right] {$m$} circle [radius=0.1];
+\draw[fill] (2,5.8) node[above right] {$n$} circle [radius=0.1];
+\draw[fill] (3.8,4) node[below right] {$t$} circle [radius=0.1];
+\draw[dashed](0,5.8) node[left, align=center]{$p_{n}$}--(2,5.8)--(2,0)node[below]{$q^{n}$};
+\draw[dashed](3.8,0) node[below]{$q_{tot}$} -- (3.8,4);
+\end{tikzpicture}
+```
+]
+
+---
+# In-class problem (two-price market)
+Consider the firm's demand curve in the private insurance market, $d=16-q$, and costs, $c(q)=5+q^{2}$. Assume that there exists a public insurer that pays a fixed price of $\bar{p}=10$.<br>
+
+1. How many private patients will the provider serve? 
+2. How many public patients? 
+3. What if $\bar{p}$ drops to <span>&#36;</span>9.
+
+---
+# Cost-shifting
+- Relationship between public and private price is important
+- Speaks to anticipated effects of a change in Medicaid or Medicare rates
+- Do hospitals "make up" the difference?<br>
+
+--
+
+The idea that hospitals will increase private prices following a decrease in the public price is called <b>cost shifting</b>. 
+
+---
+# Cost-shifting
+But how could it happen?<br>
+
+--
+
+Assumes that hospitals could have increased private prices earlier but chose not too. This is technically possible if, for example:
+- Hospital has very low margins (maybe negative with a lower public price)
+- Insurer wants to prop up the hospital for competitive reasons
+- Hospital has diminishing returns to profits<br>
+
+--
+
+but economists usually see this as a smaller effect than most policy makers.
+
