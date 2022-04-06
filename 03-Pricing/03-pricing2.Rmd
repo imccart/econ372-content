@@ -122,7 +122,7 @@ Price $\neq$ charge $\neq$ cost $\neq$ patient out-of-pocket spending
 # What is a hospital price?
 
 .center[
-  ![](pics/DifferentPrices.jpg)
+  ![:scale 60%](pics/DifferentPrices.jpg)
 ]
 
 <div class="smalltext">Source: <a href="https://healthcarepricingproject.org/">Health Care Pricing Project</a></div>
