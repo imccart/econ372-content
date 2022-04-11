@@ -110,7 +110,57 @@ Effects for both "in-market" and "out-of-market" mergers
 ---
 # Modeling competition and prices
 
-TBD
+Health care providers compete on both quality and price (possibly other dimensions such as access or wait times). This complicates our theoretical analysis of competition.
+
+
+---
+# Competition with fixed prices
+
+- Demand: `\(q_{j}=s_{j}(z_{j}) \times D(\bar{p})\)`
+- Costs: `\(c_{j}=c(q_{j},z_{j}) + F\)`
+- Profits: `\(\pi_{j} = \bar{p}q_{j} - c_{j}\)`
+
+
+Hospitals choose quality such that:
+
+`$$\frac{d \pi_{j}}{d z_{j}} = \left(\bar{p} - \frac{d c_{j}}{d q_{j}} \right)\left(\frac{d s_{j}}{d z_{j}}D + s_{j}\frac{d D}{d z_{j}} \right) - \frac{d c_{j}}{d z_{j}}=0$$`
+
+
+---
+# Competition with fixed prices
+
+- Increase in competition will tend to increase quality
+- Negative welfare effects if `\(\frac{d D}{d z_{j}}\)` is sufficiently small and fixed costs are large
+
+---
+# Competition with market prices
+
+Profit given by `\(\pi = q(p,z) \times (p-c-d\times z) - F,\)` which yields
+`$$\begin{align*}
+p &amp;= \frac{\epsilon_{p}}{\epsilon_{p}-1} (c+dz) \\
+z &amp;= \frac{\epsilon_{z}}{\epsilon_{z}+1} \frac{p-c}{d}
+\end{align*}$$`
+
+
+---
+# Competition with market prices
+
+Rewrite in terms of elasticities:
+`$$\begin{align*}
+\epsilon_{p} &amp;= \frac{p}{p-c-dz} \\
+\epsilon_{z} &amp;= \frac{dz}{p - c - dz}
+\end{align*}$$`
+
+Taking the ratio and solving for `\(z\)` yields, `$$z = \frac{p}{d}\times \frac{\epsilon_{z}}{\epsilon_{p}},$$`    
+
+---
+# Competition with market prices
+
+Dorfman-Steiner condition:
+
+- Quality increases if the quality elasticity increases or if price increases
+- Quality increases if the price elasticity decreases or the marginal cost of quality decreases
+- **Prediction for competition:** If competition has a large effect in terms of price elasticity (i.e., consumers are heavily responsive to the price effects from increased competition), then quality may decrease. If instead competition has a large effect in terms of quality elasticity (i.e., consumers are more responsive to quality changes), then quality will increase.    
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
