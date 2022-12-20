@@ -15,8 +15,8 @@ csl: "chicago-syllabus-no-bib.csl"
 
 email: "ian.mccarthy@emory.edu"
 web: "econ372s22.classes.ianmccarthyecon.com"
-officehours: "MW 1:30-3:00 p.m."
-office: "PAIS 573"
+officehours: "MW 1:30-2:30 p.m."
+office: "R. Rollins, R432"
 classroom: "White Hall 103"
 classhours: "MW 11:30-12:45 p.m."
 
@@ -144,9 +144,9 @@ There is one mid-term exam in this class and no final. The mid-term is scheduled
 
 ## Final project
 
-Each of you will analyze data and prepare a report on a practical health economics problem. This semester, the project concerns hospital price transparency and compliance with regulators. Details of the project are available on the [class website](https://econ372s23.classes.ianmccarthyecon.com/), and your final report is due on the last day of class (**April 24, 2023**). 
+Each of you will prepare a 2-page policy brief, split up into a few distinct stages. Details of the project are available on the [class website](https://econ372s23.classes.ianmccarthyecon.com/), and your final policy brief is due on the last day of class (**April 24, 2023**). 
 
-The project is an important part of the class and reflects one of the core objectives --- to analyze data in a real-life hospital setting and apply those findings to a real-life policy situation. The project is intended to be a semester-long endeavor and should be the predominant focus throughout the second half of the course. This is why we don't have a final exam.
+The project is an important part of the class and reflects one of the core objectives --- to analyze data in a real-life setting and apply those findings to a real-life policy situation. The project is intended to be a semester-long endeavor and should be the predominant focus throughout the second half of the course. This is why we don't have a final exam.
 
 ## Due dates
 
