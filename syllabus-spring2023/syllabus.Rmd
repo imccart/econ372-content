@@ -50,23 +50,23 @@ This course examines the industrial organization of health care markets in the U
 
 The broad goal of the class is to understand the structure of health care markets in the U.S. The course is designed around three areas, reflecting the different interactions an individual would have when navigating the health care system (choosing an insurance plan, visiting a physician, and receiving hospital care). For each segment, we will develop the underlying theoretical model(s), cover recent empirical studies in the area, and discuss relevant health care policy. My specific goals are that, by the end of this course, you will be able to:
 
-1. Explain the structure of the U.S. health care system, its main components, and its history
+1. Explain the structure of the U.S. health care system, its main components, and its history;
 
-2. Model adverse selection in health insurance, examine its effects on health insurance markets, and support your arguments with existing data
+2. Model adverse selection in health insurance, examine its effects on health insurance markets, and support your arguments with existing data;
 
-3. Explain the physician agency problem, use a model of physician agency to examine financial incentives in health care, and summarize empirical evidence on the presence of physician agency
+3. Explain the physician agency problem, use a model of physician agency to examine financial incentives in health care, and summarize empirical evidence on the presence of physician agency; and
 
-4. Describe hospital pricing, negotiation with insurers, and explain (qualitatively and quantitatively) the differences between charges and prices
+4. Describe hospital pricing, negotiation with insurers, and explain (qualitatively and quantitatively) the differences between charges and prices.
 
 5. Analyze hospital data in a real-life setting and predict effects of real-life policies
 
-There are more specific learning outcomes for each module described on the relevant module's page of our class website, accessible [here](https://econ372s21.classes.ianmccarthyecon.com/).
+There are more specific learning outcomes for each module described on the relevant module's page of our class website, accessible [here](https://econ372s23.classes.ianmccarthyecon.com/).
 
 # Text, Software, and Class Materials
 
 1. **Where to go:** The best place for information on the class is our class website,  [here](https://econ372s23.classes.ianmccarthyecon.com/). I use the website as an easier way for you to access course materials, including notes/slides, a detailed schedule, and assignments. I'll also use Canvas to distribute any papers or specific readings that aren't available publicly, as well as post information that I don't want public like virtual meeting passwords (if needed) and grades. 
 
-2. **Readings:** There are two recommended textbooks for this class. One is an intermediate microeconomics textbook that will cover much of the basic economic theory, and another is a health economics textbook. We will supplement these textbooks with other readings listed below in the detailed schedule, as well as online. 
+2. **Readings:** There are two optional textbooks for this class. One is an intermediate microeconomics textbook that will cover much of the basic economic theory, and another is a health economics textbook. We will supplement these textbooks with other readings listed below in the detailed schedule, as well as online. These textbooks are not required but may be useful for students looking for some supplemental resources.
 
     - @pindyck2018
     - @sloan2012
@@ -76,7 +76,7 @@ There are more specific learning outcomes for each module described on the relev
 
 4. **Accessing Data:** For most empirical work, I will house all of the links to the data on our class website. For transparency, I will also point you to other GitHub repositories where available. If you're new to Git or GitHub and want to understand some of that better, take a look at [Grant McDermott's](https://grantmcdermott.com/) notes on [Data Science for Economists](https://github.com/uo-ec607/lectures) as well as [Jenny Bryan's](https://jennybryan.org/) online reference book, [Happy Git and GitHub with R](https://happygitwithr.com/). But again, knowledge of Git or GitHub is not part of this class.
 
-5. **Turning things in:** All assignments should be submitted as PDF files in *Canvas*. Since we'll be using some math in all of our answers, I suggest that you try [Overleaf](https://www.overleaf.com/), but you can also write your answers in Word and print to PDF. As an Emory student, everyone has access to an institutional Overleaf account, which provides you with all the nice features of the product. You can use this to easily write PDF documents in a language known as "LaTeX". For a brief introductory video and links to more info, please see the video [here](https://www.overleaf.com/learn/latex/Questions/Getting_started_with_LaTeX_and_Overleaf_(formerly_writeLaTeX)).
+5. **Turning things in:** All assignments should be submitted as PDF files in Canvas. Since we'll be using some math in all of our answers, I suggest that you try [Overleaf](https://www.overleaf.com/), but you can also write your answers in Word and print to PDF. As an Emory student, everyone has access to an institutional Overleaf account, which provides you with all the nice features of the product. You can use this to easily write PDF documents in a language known as "LaTeX". For a brief introductory video and links to more info, please see the video [here](https://www.overleaf.com/learn/latex/Questions/Getting_started_with_LaTeX_and_Overleaf_(formerly_writeLaTeX)).
 
 
 # Course Policies
@@ -97,7 +97,7 @@ Finally, for any questions that you don't think need a meeting, you can always r
 
 ## Academic integrity
 
-The Emory University Honor Code is taken seriously and governs all work in this course. Details about the Honor Code are available at [Emory Honor Code](http://catalog.college.emory.edu/academic/policies-regulations/honor-code.html). By taking this course, you affirm that it is a violation of the code to cheat on exams, to plagiarize, to deviate from the instructions about collaboration on work that is submitted for grades, to give false information to a faculty member, and to undertake any other form of academic misconduct. You agree that the teacher is entitled to move you to another seat during examinations, without explanation. You also affirm that if you witness others violating the code you have a duty to report them to the honor council.
+The Emory University Honor Code is taken seriously and governs all work in this course. Details about the Honor Code are available [here](http://catalog.college.emory.edu/academic/policies-regulations/honor-code.html). By taking this course, you affirm that it is a violation of the code to cheat on exams, to plagiarize, to deviate from the instructions about collaboration on work that is submitted for grades, to give false information to a faculty member, and to undertake any other form of academic misconduct. You agree that the teacher is entitled to move you to another seat during examinations, without explanation. You also affirm that if you witness others violating the code you have a duty to report them to the honor council.
 
 
 ## Accessibility services
@@ -106,7 +106,7 @@ If you anticipate issues related to the format or requirements of this course, p
 
 ## Class-wide announcements
 
-I will post regular announcements to the class on *Canvas*, so please set up your notifications on *Canvas* accordingly. I will also use *Canvas* to post all grades and any other information that needs to stay in the class. All other course materials will be available on our class website, [here](https://econ372s22.classes.ianmccarthyecon.com/).
+I will post regular announcements to the class on **Canvas**, so please set up your notifications accordingly. I will also use Canvas to post all grades and any other information that needs to stay in the class. All other course materials will be available on our class website, [here](https://econ372s23.classes.ianmccarthyecon.com/).
 
 ## Lauren's Promise
 
@@ -129,7 +129,7 @@ At the end of the semester, I will tally your participation points, and your fin
 
 ## Homework assignments
 
-There will be 3 homework assignments throughout the semester (one for each module). These assignments will consist of two parts: 1) short answer questions related to models covered in class or readings; and 2) empirical questions related to data I provide or that you are asked to collect. Preliminary due dates for these assignments are below, and details of the assignments are on our [class website](https://econ372s22.classes.ianmccarthyecon.com/).
+There will be 3 homework assignments throughout the semester (one for each module). These assignments will consist of two parts: 1) short answer questions related to models covered in class or readings; and 2) empirical questions related to data I provide or that you are asked to collect. Preliminary due dates for these assignments are below, and details of the assignments are on our [class website](https://econ372s23.classes.ianmccarthyecon.com/).
 
   - Friday, 2/10
   - Friday, 3/17
