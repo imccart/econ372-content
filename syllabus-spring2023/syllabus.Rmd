@@ -95,6 +95,10 @@ While we call these "office hours" they really should be "student hours". These 
 
 Finally, for any questions that you don't think need a meeting, you can always reach out to me through email. I do my best to respond within 24 hours to all emails.
 
+## TA
+
+Our TA this semester is Rachel Clohan. She's a PhD student in the economics department, interested in research related to health and health care economics. Rachel is awesome and I'm sure will be a great resource for you throughout the semester. She will attend most (but not all) of the classes and will hold office hours on **Tuesdays** from **10:30am to 11:30am** in the R. Rollins Building, R400C-25. She has a cubicle just to the right of the entrance into the fourth floor offices. You can also reach Rachel via email at rachel.clohan@emory.edu.
+
 ## Academic integrity
 
 The Emory University Honor Code is taken seriously and governs all work in this course. Details about the Honor Code are available [here](http://catalog.college.emory.edu/academic/policies-regulations/honor-code.html). By taking this course, you affirm that it is a violation of the code to cheat on exams, to plagiarize, to deviate from the instructions about collaboration on work that is submitted for grades, to give false information to a faculty member, and to undertake any other form of academic misconduct. You agree that the teacher is entitled to move you to another seat during examinations, without explanation. You also affirm that if you witness others violating the code you have a duty to report them to the honor council.
@@ -158,7 +162,6 @@ This section is just to highlight the most important dates on which an assignmen
   - **Friday, 4/21**: Homework 3
   - **Monday, 4/24**: Final project
 
-\newpage
 
 ## Grades
 
