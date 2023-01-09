@@ -55,7 +55,7 @@ knitr::opts_hooks$set(fig.callout = function(options) {
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes,
                scales, gganimate, gapminder, gifski, png, tufte, plotly, OECD,
-               ggrepel, xaringanExtra)
+               ggrepel, xaringanExtra, here)
 ```
 
 
@@ -182,7 +182,7 @@ anim1 <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop)) +
   ease_aes('linear')
 
 anim_save("anim1.gif",anim1,
-          path="/home/imccart/Professional/Teaching/Emory/Econ-372/content/00-Introduction/pics")
+          path=here("00-Introduction/pics"))
 ```
 
 .center[
@@ -210,7 +210,7 @@ anim2 <- gapminder %>% filter(country %in% c("Canada", "France", "Germany", "Ita
   ease_aes('linear')
 
 anim_save("anim2.gif",anim2,
-          path="/home/imccart/Professional/Teaching/Emory/Econ-372/content/00-Introduction/pics")
+          path=here("00-Introduction/pics"))
 ```
 
 .center[
@@ -285,7 +285,7 @@ anim4 <- oecd.dat %>% filter(year>=1970) %>% group_by(country) %>% fill(c(tot_ex
   transition_time(year) +
   ease_aes('linear')
 anim_save("anim4.gif",anim4,
-          path="/home/imccart/Professional/Teaching/Emory/Econ-372/content/00-Introduction/pics")
+          path=here("00-Introduction/pics"))
 ```
 
 .center[
@@ -304,7 +304,7 @@ anim5 <- oecd.dat %>% filter(year>=1970 & year<=2012) %>% group_by(country) %>% 
   transition_time(year) +
   ease_aes('linear')
 anim_save("anim5.gif",anim5,
-          path="/home/imccart/Professional/Teaching/Emory/Econ-372/content/00-Introduction/pics")
+          path=here("00-Introduction/pics"))
 ```
 
 .center[
@@ -321,7 +321,7 @@ anim_save("anim5.gif",anim5,
 
 
 ???
--Quick Zoom poll: Do you agree or disagree with this statement? The US spends more than any other developed country on health care for worse outcomes.
+-Quick poll: Do you agree or disagree with this statement? The US spends more than any other developed country on health care for worse outcomes.
 
 -Major takeaway from these commonwealth fund graphs...we have an "access" problem in the U.S. In many ways, we "overprovide" care to some people and underprovide care to lots of other people. We are particularly bad at helping the least healthy among us. These issues are, of course, very closely related to other economic problems and inequality in general.
 
@@ -384,7 +384,7 @@ Can you identify one or two reasons for our high prices/expenditures? Keep in mi
 
 
 ???
-- Do this as a zoom poll: What do you think is the biggest driver of spending? Too much care? Overpaid physicians? Less healthy population?
+- Do this as a poll: What do you think is the biggest driver of spending? Too much care? Overpaid physicians? Less healthy population?
 
 ---
 class: clear, center
@@ -502,7 +502,7 @@ Assessment in 4 different ways:
 
 1. Homework (3 assignments, 1 for each module)
 2. Mid-term exam (covers modules 1-2)
-3. Project (relates mainly to module 3 but is semester long)
+3. Project (semester-long)
 4. Participation
 
 
@@ -519,8 +519,9 @@ Assessment in 4 different ways:
 ---
 # Office hours
 
-- **Official** office hours are Monday and Wednesday, 2:30 to 3:30
-- PAIS 573, but Zoom is an option
+- **Official** office hours are Monday and Wednesday, 1:30 to 2:30
+- R. Rollins R432
+- Zoom can be an option but let's try to do things in person first
 --
 
 - **Unofficial** office hours (nearly) anytime!
