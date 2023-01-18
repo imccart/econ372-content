@@ -18,10 +18,18 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Module 1: Health Insurance
+]
+.subtitle[
 ## Part 1: Risk and Uncertainty
+]
+.author[
 ### Ian McCarthy | Emory University
+]
+.date[
 ### Econ 372
+]
 
 ---
 
@@ -143,7 +151,7 @@ An individual starts with a wealth of &lt;span&gt;&amp;#36;&lt;/span&gt;100,000.
 
 1. What is this person's expected cost of illness?
 2. Assume this individual has a utility function of the form, `\(u(w) = w^{0.20}\)`. What is this person's expected utility?
-3. Calculate this person's utility if they were to incur the cost of illness with certainty. Is this utility higher or lower than what you found in part (2)?
+3. Calculate this person's utility if they were to incur the expected cost of illness. Is this utility higher or lower than what you found in part (2)?
 
 
 
@@ -221,6 +229,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
