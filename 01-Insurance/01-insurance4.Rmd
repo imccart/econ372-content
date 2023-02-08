@@ -121,20 +121,21 @@ We motivated this entire section of the class with the example of Humana withdra
 # Some papers
 
 - [Adverse Selection in Medicaid](https://www.journals.uchicago.edu/doi/10.1086/716464)
-- [New Risk-Adjustmentystem Was Associated With Reduced Favorable Selection in Medicare Advantage](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344)
+- [New Risk-Adjustment System Was Associated With Reduced Favorable Selection in Medicare Advantage](https://www.healthaffairs.org/doi/full/10.1377/hlthaff.2011.1344)
 
 ---
 # How to read a paper
 
 - Purpose (what are you trying to get out of this)
   - Understand policy environment, MA, risk adjustment
-  - How did change in risk-adjustment affect enrollments
+  - How did change in risk-adjustment affect enrollments?
   
 - Strategy (where to focus your energy)
-  - Abstract, intro, "how measures ... might work"
+  - Abstract, intro, skim other parts at first
   - Study results
 
 --
+
 In this case, reading for:
   - Policy environment
   - Main results
